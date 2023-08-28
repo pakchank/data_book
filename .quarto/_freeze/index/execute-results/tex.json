@@ -1,0 +1,18 @@
+{
+  "hash": "6d32f6ce35568faee8dbc9d1cb0e5fe0",
+  "result": {
+    "markdown": "# Preface {.unnumbered}\n\n이 웹사이트는 지역 언론인을 위한 개발 사이트 입니다. 전체적으로 Donors Choose data를 이용해서...\n\n언어로는 R을 이용할 것입니다. - 상대적으로 쉽고, - 공짜고, - 해외 데이터 저널리즘 커뮤니티에서 사실상 표준으로 사용되고 있습니다.\n\nhttps://github.com/fivethirtyeight https://github.com/TheEconomist\n\n-   좋은 IDE를 가지고 있고\n-   바로 온라인으로 publish할 수 있는 기술이 잘 발달되어 있습니다 (공동 프로젝트 가능)\n    -   이 책 역시 같은 방식을 이용해 만들어지고 있습니다.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n\n\n\n복잡한 것들을 최대한 늦게 필요할 때 가르치는 것을 목표로 합니다. 빅데이터 또는 주어진 관찰 데이터를 예시로 삼습니다. 스포츠의 예...\n\n저널리즘 - 시각화 이론 등등\n\n모든 단원 시작할 때 필요한 패키지부터..\n\n\n1.  R 설치와 Rstudio 설치\n    -   한글 세팅\n    -   개발 환경 qmd\n2.  기본 R 문법과 Tidyverse\n    -   데이터 타입에 대한 이해\n        -   atomic type\n        -   응용 타입: factor\n        -   list 타입: Tree type 데이터\n    -   Tidyverse의 효용성 -\\> 이 철학을 따르기!\n3.  데이터 불러오기 (일단은 주어진 데이터)\n4.  데이터 축약하기 (Summarise)\n5.  데이터 시각화 하기 1 -\\> 여기까지 쓰는 것을 목표로!\n6.  데이터 시각화 하기 2 (Optional): Storytelling\n    -   웹 프로그래밍의 응용\n    -   HTML, CSS 이해\n7.  공공 데이터 이용하기\n    -   API 이해하기\n    -   XML, JSON 이해하기\n    -   For-loop, function 이해하기\n8.  스크래이핑\n    -   고급 스크레이핑에 대한 이야기.\n9.  고급 토픽: 공간 데이터 이용하기 + 시각화.\n10. 고급 토픽: 예측을 이용한 보도\n    -   주식 집값이 보편적인 예시이지만,\n    -   스포츠가 더 plausible한 예시.\n11. 고급 토픽: Interactive Design\n12. 데이터 배포하기에 대한 이해\n    -   HTML\n    -   Markdown\n    -   Pandoc\n    -   Quarto\n    -   Github\n\n\n\n빠진 부분:\nifelse() -> Boolean\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

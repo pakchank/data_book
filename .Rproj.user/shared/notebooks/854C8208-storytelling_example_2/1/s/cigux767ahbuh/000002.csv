@@ -1,0 +1,32 @@
+"0","```r
+data %>%
+    ggplot(aes(x=percent, y=country, color=month)) +
+    geom_line(aes(group=country), size=1.75, color=\"#e6e6e6\", show.legend = FALSE) +
+    geom_point(size=2, show.legend = FALSE) +
+    geom_text(aes(label=glue(\"{percent}%\"), x=bump), show.legend=FALSE) +
+      
+    scale_color_manual(name=NULL,
+                     breaks=c(\"august\", \"october\"),
+                     breaks=seq(50, 100, by=5),
+                     labels=glue(\"{seq(50, 100, 5)}%\")) +
+    scale_y_discrete(expand=c(0, 2.2)) +
+    labs(x=NULL, y=NULL,
+       title=\"If a vaccine for COVID-19 were available, I would get it\",
+       caption=\"<i>Base: 18,526 online adults aged 16-74 across 15 countries</i><br>Source: Ipsos\") +
+    theme(plot.title.position = \"plot\",
+          plot.title = element_text(face=\"bold\", margin= margin(b=20)),
+          plot.caption = element_markdown(hjust=0, color=\"darkgray\"),
+          plot.caption.position = \"plot\",
+          panel.background = element_blank(),
+          #plot.margin = unit(c(1,1,1,1), \"cm\"),
+          axis.ticks = element_blank(),
+          axis.text.x = element_text(color=\"darkgray\"),
+          panel.grid.major.x = element_line(color=\"gray\", size=0.1),
+    geom_richtext(x=71, y=17.5, label=\"<span style='color:#15607a'> Total Agree - <br> October 2020 </span>\", 
+                  fill = NA, label.color = NA, size=3, show.legend = FALSE) +
+    geom_richtext(x=80, y=17.5, label=\"<span style='color:#727272'> Total Agree - <br> August 2020 </span>\", 
+                  fill = NA, label.color = NA, size=3, show.legend = FALSE)
+```"
+"1","ê²½ê³ : The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
+Please use the `linewidth` argument instead.
+"

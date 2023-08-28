@@ -1,0 +1,20 @@
+"0","```r
+data <- read_csv(\"august_october_2020.csv\")
+```"
+"1","Rows: 16 Columns: 3
+-- Column specification ------------------------------------------------------------------------------------------------------------------
+Delimiter: \",\"
+chr (1): X.1
+dbl (2): Total Agree - August 2020, Total Agree - October 2020
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","```r
+data <- data %>%
+    rename(Country = X.1) %>%
+    filter(Country != \"Total\") %>%
+    pivot_longer(!Country, names_to=\"Time\", values_to=\"Agree\") %>%
+           Time = case_when(Time == \"Total Agree - August 2020\" ~ \"8ì›”\",
+                            Time == \"Total Agree - October 2020\" ~ \"10ì›”\"))
+```"

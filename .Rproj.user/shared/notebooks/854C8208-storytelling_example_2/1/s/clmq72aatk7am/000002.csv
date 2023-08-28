@@ -1,0 +1,20 @@
+"0","```r
+data <- read_csv(\"august_october_2020.csv\")
+```"
+"1","Rows: 16 Columns: 3-- Column specification ----------------------------------------------------------------------------------------------------------------------------
+Delimiter: \",\"
+chr (1): X.1
+dbl (2): Total Agree - August 2020, Total Agree - October 2020
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+"
+"0","```r
+    rename(country = X.1,
+         percent_august = \"Total Agree - August 2020\",
+         percent_october = \"Total Agree - October 2020\") %>%
+    pivot_longer(cols=!country, names_to=\"month\", values_to=\"percent\") %>%
+    mutate(month = case_when(month == \"percent_august\" ~ \"august\",
+           country = fct_rev(fct_relevel(country, \"Total\"))) %>%
+    group_by(country) %>%
+    mutate(increase = ifelse(percent == max(percent), TRUE, FALSE),
+```"

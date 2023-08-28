@@ -1,0 +1,3 @@
+"0","data <- data |>"
+"0","    rename(country = X.1, august = `Total Agree - August 2020`,"
+"0","           october = `Total Agree - October 2020`)"

@@ -1,0 +1,8 @@
+"0","projects |> "
+"0","    mutate(year = year(date_posted)) |>"
+"0","    group_by(year) |>"
+"0","    summarise(avg_size = mean(total_price_excluding_optional_support)) |>"
+"0","    ggplot() +"
+"0","    aes(x=year, y=avg_size) +"
+"0","    geom_line() +"
+"0","    geom_point()"

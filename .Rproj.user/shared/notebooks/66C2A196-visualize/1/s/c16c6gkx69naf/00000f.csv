@@ -1,0 +1,5 @@
+"0","projects |> "
+"0","    mutate(year = year(date_posted)) |>"
+"0","    group_by(school_state, year) |>"
+"0","    summarise(avg_size = mean(total_price_excluding_optional_support))"
+"2","`summarise()` has grouped output by 'school_state'. You can override using the `.groups` argument."

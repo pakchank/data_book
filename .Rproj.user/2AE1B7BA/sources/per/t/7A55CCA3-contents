@@ -1,0 +1,42 @@
+project:
+  type: book
+
+lang: ko-KR
+
+book:
+  title: "개방형 데이터 저널리즘 교재 (초고)"
+  author: "박찬경"
+  date: "6/26/2023"
+  chapters:
+    - index.qmd
+    - journalism.qmd
+    - ds.qmd
+    #- intro.qmd
+    - install.qmd
+    - basic.qmd
+    - quarto.qmd
+    - tidy.qmd
+    - manipulate.qmd
+    - summarise.qmd
+    - visualize.qmd
+    - retrieval.qmd
+    - story.qmd
+
+#bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrbook
+    #fontfamily: Batang
+    include-in-header:
+      - text: 
+          \usepackage{layouts}
+
+editor: visual
+
+mainfont: Batang
+sansfont: Batang
+monofont: Batang
+

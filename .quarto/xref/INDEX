@@ -1,0 +1,41 @@
+{
+  "index.qmd": {
+    "index.html": "58af4d64"
+  },
+  "intro.qmd": {
+    "intro.html": "0e671e4d"
+  },
+  "summary.qmd": {
+    "summary.html": "7e5632b7"
+  },
+  "references.qmd": {
+    "references.html": "09bf92d7"
+  },
+  "ds.qmd": {
+    "ds.html": "a7b510e1"
+  },
+  "journalism.qmd": {
+    "journalism.html": "703e38d6"
+  },
+  "install.qmd": {
+    "install.html": "c073ae54"
+  },
+  "basic.qmd": {
+    "basic.html": "76f88ee5"
+  },
+  "quarto.qmd": {
+    "quarto.html": "4201ac90"
+  },
+  "tidy.qmd": {
+    "tidy.html": "2b14d12a"
+  },
+  "manipulate.qmd": {
+    "manipulate.html": "6adb188b"
+  },
+  "summarise.qmd": {
+    "summarise.html": "7df50ccb"
+  },
+  "visualize.qmd": {
+    "visualize.html": "4aaa401a"
+  }
+}

@@ -1,0 +1,28 @@
+{
+    "id": "1E6C75F3",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1692238981056.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "id": "bec3ea2cb9cd43bbbeb21ea2e30d5151",
+        "name": "dtJSON",
+        "title": "dtJSON",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 8458373023968028004,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1692238981056,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,5 @@
+"0","data |>"
+"0","    pivot_longer(!country, names_to=""month"", values_to=""agree"") |>"
+"0","    ggplot() +"
+"0","    aes(x=month, y=agree) +"
+"0","    geom_line(aes(group=country))"

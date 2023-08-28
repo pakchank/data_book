@@ -1,0 +1,57 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+library(tidyverse)
+library(ggtext)
+
+Sys.getlocale()
+Sys.setlocale("LC_ALL","C") # 강제 언어 삭제
+Sys.setlocale("LC_ALL","Korean") # 언어 다시 한글로
+options(blogdown.knit.serve_site = FALSE)
+```
+
+```{r}
+data <- read_csv("august_october_2020.csv")
+
+data <- data %>%
+    rename(Country = X.1) %>%
+    filter(Country != "Total") %>%
+    pivot_longer(!Country, names_to="Time", values_to="Agree") %>%
+    mutate(highlight = ifelse(Country == "South Korea", TRUE, FALSE),
+           Time = case_when(Time == "Total Agree - August 2020" ~ "8월",
+                            Time == "Total Agree - October 2020" ~ "10월"),
+           Time = fct_relevel(factor(Time), "8월", "10월"))
+```
+
+```{r}
+g <- data %>%
+    ggplot(aes(x=Time, y=Agree, color=highlight)) +
+    geom_point(show.legend=FALSE) +
+    geom_line(aes(group=Country, size=highlight), show.legend = FALSE) + 
+    coord_fixed(ratio=0.04) +
+    labs(x="",
+         y="백신 투약 의사 비율",
+         title="<span style='color: blue'>한국</span>의 백신 투약 의사는<br>오히려 상승") +
+    scale_color_manual(breaks=c(TRUE, FALSE),
+                         values=c("blue", "grey")) +
+    scale_size_manual(breaks=c(TRUE, FALSE),
+                      values=c(1, 0.5)) +
+    scale_x_discrete(expand=c(0,0.1)) +
+    theme(text = element_text(color="grey"),
+          panel.background = element_rect(fill="white"),
+          axis.title.y = element_text(size=15),
+          axis.text = element_text(color="grey"),
+          plot.title = element_markdown(),
+          plot.title.position="plot")
+ggsave("example.png", g)
+```
+
+
+
+
+

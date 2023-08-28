@@ -1,0 +1,2 @@
+"0","data <- read_csv(""data/august_october_2020.csv"")"
+"0","data"

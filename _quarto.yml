@@ -1,0 +1,44 @@
+project:
+  type: book
+
+lang: ko-KR
+
+book:
+  title: "지역 언론인을 위한 R기반 데이터 저널리즘"  
+  author: "박찬경"
+  date: "6/26/2023"
+  chapters:
+    - index.qmd
+    - journalism.qmd
+    - ds.qmd
+    #- intro.qmd
+    - install.qmd
+    - basic.qmd
+    - quarto.qmd
+    - tidy.qmd
+    - manipulate.qmd
+    - summarise.qmd
+    - visualize.qmd
+    - retrieval.qmd
+    - story.qmd
+    - story2.qmd
+    - appendix-install.qmd
+
+#bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrbook
+    #fontfamily: Batang
+    include-in-header:
+      - text: 
+          \usepackage{layouts}
+
+editor: visual
+
+mainfont: Batang
+sansfont: Batang
+monofont: Batang
+

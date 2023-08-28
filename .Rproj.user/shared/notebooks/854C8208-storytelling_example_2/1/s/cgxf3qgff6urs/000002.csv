@@ -1,0 +1,8 @@
+"0","```r
+data %>%
+    ggplot(aes(x=percent, y=country, color=month)) +
+    geom_line(aes(group=country), size=1.75, color=\"grey\", show.legend = FALSE) +
+    geom_point(size=2, show.legend = FALSE) +
+    theme_minimal() +
+    labs(x=\"\", y=\"\")
+```"

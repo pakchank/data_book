@@ -1,0 +1,411 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(httr)
+library(jsonlite)
+library(xml2)
+library(raster)
+#library(ggmap)
+#library(gpclib)
+library(maptools)
+library(lubridate)
+    
+#Sys.getlocale()
+Sys.setlocale("LC_ALL","C") # 강제 언어 삭제
+Sys.setlocale("LC_ALL","Korean") # 언어 다시 한글로
+```
+
+# 아파트 실거래가
+```{r}
+res <- GET(url="http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade",
+           query=list(LAWD_CD=11110,
+                      DEAL_YMD=201512,
+                      serviceKey="LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq/ea2CQUTUuisLvxlxaGm0YTp4f+89FfhplvwiQIe0cngpybTkdDHQ=="))
+```
+
+```{r}
+dtJSON <- httr::content(res, as = "text", encoding="UTF-8")
+```
+
+```{r}
+data <- fromJSON(dtJSON)
+```
+
+```{r}
+df <- data$response$body$items$item
+```
+
+
+# 아파트 실거래가 (함수형태)
+```{r}
+getApt <- function(cd, ymd){
+    res <- GET(url="http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade",
+           query=list(LAWD_CD=cd,
+                      DEAL_YMD=ymd,
+                      serviceKey="LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq/ea2CQUTUuisLvxlxaGm0YTp4f+89FfhplvwiQIe0cngpybTkdDHQ=="))
+    dtJSON <- httr::content(res, as = "text", encoding="UTF-8")
+    data <- fromJSON(dtJSON)
+    df <- data$response$body$items$item
+
+    return(df)
+}
+```
+
+```{r}
+getApt(cd=11110, ymd=201512)
+```
+
+# 아파트 실거래가 (반복)
+```{r}
+cds <- c(27260, 27140, 27290, 27110)
+ymds <- 202101:202112
+```
+
+```{r}
+datalist <- list()
+counter <- 1
+for (cd in cds){
+    for (ymd in ymds) {
+        datalist[[counter]] <- getApt(cd=cd, ymd=ymd)
+        counter <- counter + 1
+    }
+}
+```
+
+```{r}
+dtApt <- bind_rows(datalist)
+```
+
+```{r}
+write_csv(dtApt, "dtApt.csv")
+```
+
+```{r}
+dtApt <- read_csv("dtApt.csv")
+```
+
+# 아파트 실거래가 (시각화)
+```{r}
+aggApt <- dtApt %>%
+    mutate(거래금액 = as.numeric(gsub(",", "", 거래금액)),
+           yearmonth = 년*100 + 월,
+           district = case_when(지역코드 == 27260 ~ "수성구",
+                                지역코드 == 27140 ~ "동구",
+                                지역코드 == 27290 ~ "달서구",
+                                지역코드 == 27110 ~ "중구")) %>%
+    group_by(district, yearmonth) %>%
+    summarise(avgP = mean(거래금액)) 
+```
+
+```{r}
+aggApt %>%
+    ggplot(aes(yearmonth, avgP, color=district)) +
+    geom_line() +
+    facet_wrap(~ district, nrow = 2) +
+    theme_classic()
+```
+
+```{r}
+aggApt %>%
+    mutate(month = month(ym(yearmonth))) %>%
+    ggplot(aes(as.integer(month), avgP, color=district)) +
+    geom_line() +
+    facet_wrap(~ district, nrow = 2) +
+    theme_classic() +
+    ylab("아파트 가격") + 
+    xlab("월") +
+    scale_x_continuous(breaks=c(1,5,9,12)) +
+    scale_y_continuous(breaks=c(25000, 35000, 45000)) +
+    theme(legend.position = "none")
+```
+
+여기에 theme 이랑 몇 개 더하기 (예쁘게 만들기)
+- lubridate으로 date으로 인식시키는게 낫겠다.
+
+
+# 지도 시각화
+```{r}
+#korea <- getData('GADM', country='kor', level=2)
+korea <- shapefile('TL_SCCO_SIG.shp')
+```
+```{r}
+daegu_gadm <- korea[korea$NAME_1 %in% 'Daegu', ]
+```
+```{r}
+names(daegu_gadm)
+```
+
+```{r}
+ggplot() + 
+    geom_polygon(data=daegu_gadm, aes(x=long, y=lat, group=group), fill='white', color='black')
+```
+
+```{r}
+daegu <- fortify(daegu_gadm, region="NL_NAME_2")
+```
+
+```{r}
+unique(daegu$id)
+```
+```{r}
+daegu <- daegu %>%
+    mutate(district = case_when(id == "남구 | 南區" ~ "남구",
+                                id == "달서구 | 達西區" ~ "달서구",
+                                id == "달성군 | 達城郡" ~ "달성군",
+                                id == "동구 | 東區" ~ "동구",
+                                id == "북구 | 北區" ~ "북구", 
+                                id == "서구 | 西區" ~ "서구",
+                                id == "수성구 |  壽城區" ~ "수성구",
+                                id == "중구| 中區" ~ "중구"))
+```
+
+```{r}
+growth <- aggApt %>%
+    group_by(district) %>%
+    summarise(growth = (last(avgP) - first(avgP)) / first(avgP) * 100)
+```
+
+
+
+
+```{r}
+daegu %>%
+    left_join(growth, by="district") %>%
+    ggplot() +
+    geom_polygon(aes(x=long, y=lat, group=group, fill=growth))
+```
+
+```{r}
+daegu %>%
+    left_join(growth, by="district") %>%
+    ggplot() +
+    geom_polygon(aes(x=long, y=lat, group=group, fill=growth), color="black") +
+    labs(title="대구 연평균 아파트 가격 상승폭") +
+    theme_void() +
+    theme(legend.position = "bottom", 
+          plot.title = element_text(size=18, face="bold.italic", hjust=0.5)) +
+    scale_fill_continuous(name="연간 가격 성장률(%)") +
+    scale_fill_gradient2()
+```
+https://github.com/cubensys/Korea_District/blob/master/3_%EC%84%9C%EC%9A%B8%EC%8B%9C_%EC%9E%90%EC%B9%98%EA%B5%AC/%EC%84%9C%EC%9A%B8%EC%8B%9C_%EC%9E%90%EC%B9%98%EA%B5%AC_%EC%A4%91%EC%8B%AC%EC%A0%90_2017.csv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 대기오염 （시도별）
+```{r}
+res <- GET(url="http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty",
+           query=list(numOfRows=100,
+                      pageNo=1,
+                      sidoName="대구",
+                      returnType="json",
+                      serviceKey="LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq%2Fea2CQUTUuisLvxlxaGm0YTp4f%2B89FfhplvwiQIe0cngpybTkdDHQ%3D%3D"))
+```
+
+```{r}
+dtJSON <- httr::content(res, as = "text", encoding="UTF-8")
+```
+
+```{r}
+data <- fromJSON(dtJSON)
+```
+
+```{r}
+df <- data$response$body$items
+```
+
+```{r}
+write_json(dtJSON, "air.json")
+```
+
+```{r}
+temp <- df$item
+```
+
+```{r}
+stations <- df$stationName
+```
+
+
+
+
+
+
+
+
+
+
+
+# 대기오염 (관측소별 - XML)
+```{r}
+res <- GET(url="http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty",
+           query=list(numOfRows=100,
+                      pageNo=1,
+                      dataTerm="MONTH",
+                      stationName=stations[1],
+                      stationName="화랑로",
+                      returnType="xml",
+                      serviceKey="LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq%2Fea2CQUTUuisLvxlxaGm0YTp4f%2B89FfhplvwiQIe0cngpybTkdDHQ%3D%3D"))
+```
+
+```{r}
+dtXML <- httr::content(res, "text", encoding="UTF-8")
+```
+
+```{r}
+#dtxml <- xmlParse(dtXML, encoding="UTF-8")
+dt <- read_xml(dtXML, encoding="UTF-8")
+```
+
+```{r}
+write_xml(dt, file="air.xml")
+```
+
+```{r}
+list_aq <- as_list(dt)
+```
+
+```{r}
+xml_df <- tibble::as_tibble(list_aq$response$body) %>%
+  unnest_wider(items) %>%
+  unnest(cols = names(.))
+```
+
+# 대기오염 (관측소별 - XML - Stations별 페이지별 Loop 돌리기!)
+pageNo을 해결하는 건 이 사람들에겐 너무 어렵겠다.
+그냥 관측소마다 loop하는거 정도로 하자.
+page 하는 건, 그냥 보여주기 정도..
+
+```{r}
+get_aq <- function(station, page=1){
+    res <- GET(url="http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty",
+           query=list(numOfRows=100,
+                      pageNo=page,
+                      dataTerm="MONTH",
+                      stationName=station,
+                      returnType="xml",
+                      serviceKey="LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq%2Fea2CQUTUuisLvxlxaGm0YTp4f%2B89FfhplvwiQIe0cngpybTkdDHQ%3D%3D"))
+    dtXML <- httr::content(res, "text", encoding="UTF-8")
+    dt <- read_xml(dtXML, encoding="UTF-8")
+    list_aq <- as_list(dt)
+    
+    xml_df <- tibble::as_tibble(list_aq$response$body) %>%
+        unnest_wider(items) %>%
+        unnest(cols = names(.))
+    
+    return(xml_df)
+}
+```
+
+```{r}
+for (station in stations) {
+
+}
+```
+or
+```{r}
+temp <- stations[1:4]%>%
+    map_dfr(~get_aq(station=.x, page=1), .id="station")
+```
+
+
+pageNo이랑 total count랑 같으면 while loop 멈추면 되잖아.
+```{r}
+while (TRUE){
+    pageNo <- 1
+    res <- GET(url="http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty",
+           query=list(numOfRows=100,
+                      pageNo=pageNo,
+                      dataTerm="MONTH",
+                      stationName=stations[1],
+                      returnType="xml",
+                      serviceKey="LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq%2Fea2CQUTUuisLvxlxaGm0YTp4f%2B89FfhplvwiQIe0cngpybTkdDHQ%3D%3D"))
+    dtXML <- httr::content(res, "text", encoding="UTF-8")
+    dt <- read_xml(dtXML, encoding="UTF-8")
+    list_aq <- as_list(dt)
+    
+    totalCount <- list_aq$response$body$totalCount
+
+    pageNo <- pageNo + 1
+    if (pageNo == totalCount) {
+        break
+    }
+    
+    xml_df <- tibble::as_tibble(list_aq$response$body) %>%
+    unnest_wider(items) %>%
+    unnest(cols = names(.))
+}
+```
+
+
+대기소별 시계열 그래프 그리기 (facet)
+여기에 조금만 더
+
+
+
+
+
+
+## Fuction으로 만들기
+```{r}
+getSubway <- function(p) {
+  res <- GET(url="http://apis.data.go.kr/B553766/smt-delay/delay",
+           query=list(numOfRows=10,
+                      pageNo=p,
+                      lineNum=7,
+                      serviceKey="LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq/ea2CQUTUuisLvxlxaGm0YTp4f+89FfhplvwiQIe0cngpybTkdDHQ=="))
+  dtJSON <- content(res, "text", encoding="UTF-8")
+  data <- fromJSON(dtJSON)
+  df <- data$data
+
+  return(df)
+}
+```
+
+```{r}
+getSubway(2)
+```
+
+```{r}
+for (p in 1:2){
+  out <- getSubway(p)
+  if (p == 1){
+    df <- out
+  }
+  else {
+    df <- rbind(df, out)
+  }
+}
+```
+
+
+
+
+# 아파트 실거래 가격 지수
+```{r}
+res <- GET(url="http://apis.data.go.kr/B552584/ArpltnInforInqireSvc",
+           query=list(numOfRows=10,
+                      pageNo=1,
+                      lineNum=7,
+                      serviceKey="LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq%2Fea2CQUTUuisLvxlxaGm0YTp4f%2B89FfhplvwiQIe0cngpybTkdDHQ%3D%3D"))
+```
+
+
