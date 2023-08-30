@@ -28,7 +28,7 @@ book:
 
 format:
   html:
-    theme: cosmo
+    theme: superhero
   pdf:
     documentclass: scrbook
     #fontfamily: Batang

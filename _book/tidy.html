@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -264,13 +264,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="패키지-개념-이해하기" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="패키지-개념-이해하기"><span class="header-section-number">6.1</span> 패키지 개념 이해하기</h2>
 <p><code>R</code>뿐만 아니라, 많은 다른 언어에서 ’패키지’라고 하는 것은 쉽게 말하자면 유용한 함수들의 묶음을 의미합니다. 기본 <code>R</code>을 설계한 사람들이 <code>R</code>에 내장해두지는 않았지만, 특정 목적을 위해서는 유용함 도구들이 묶여서 ’패키지’로 제공된다고 생각하면 되겠습니다. 비유하자면, 여러분들이 매일 사용하는 ’카카오톡’이 <code>R</code>이라고 해 보죠. 카카오톡 안에는 기본적인 채팅 기능 안에도 수많은 다른 기능들이 있지요? 선물을 주고 받을 수도 있고, 음식을 주문할 수도 있고, 쇼핑을 할 수도 있습니다. 물론 모든 이용자들이 이 기능들을 모두 사용하지는 않지요. 하지만, 어떤 사람들은 자주 사용합니다. 이러한 세부 기능에 해당 하는 일종의 카카오톡 안의 ’미니 프로그램’을 <code>R</code>에서는 패키지라고 부른다고 생각하면 되겠습니다.</p>
-<p><strong>그림 카카오 미니 프로그램</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/tidy/kakaotalk_miniprogram.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">카카오 미니프로그램</figcaption>
+</figure>
+</div>
 <p><code>R</code>에서 패키지를 부르는 방법은 다음과 같습니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stats)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>library()</code>는 괄호가 있으니, 패키지를 부르는 ’함수’일 것이고, 괄호 안에는 부르고 싶은 패키지의 이름을 <strong>따옴표 없이</strong> 쓰면 됩니다. 여기서는 <code>R</code>을 설치할 때 같이 설치되는 <code>stats</code>라는 패키지를 불렀습니다.</p>
-<p><strong>그림: 기본 패키지 - 공식 패키지 - 비공식 패키지</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/tidy/package.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">패키지 종류</figcaption>
+</figure>
+</div>
 <p>그런데 <code>R</code>이 설치될 때 모든 패키지가 함께 설치되는 것은 아닙니다. 사실 그렇지 않은 패키지가 훨씬 많지요. 심지어 패키지는 여러분도 만들 수 있습니다. 그렇게 개인이 여러 목적으로 만든 비공식 패키지까지 포함한다면, 세상에는 무한히 많은 <code>R</code> 패키지들이 있습니다. 하지만, 우리가 자주 사용하게될 패키지는 <code>R</code>개발진들의 관리 감독 아래 있는 ‘공식’ 패키지들입니다. 공식 패키지이지만, <code>R</code>과 함께 설치되지 않는 패키지를 설치하기 위해서는 다음과 같은 함수를 실행시키면 됩니다 (여기서는 따옴표가 필요합니다!).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -383,7 +393,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="파이프" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="파이프"><span class="header-section-number">6.2.2</span> (2) 파이프</h3>
 <p>파이프는 코드를 길게 써야 할 때 필요한 사용하는 코딩 스타일 입니다. 파이프를 위해서는 ’파이프’로 불리는 기호가 하나 필요합니다. 바로 다음 기호 입니다.</p>
-<p><strong>그림: 파이프</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/tidy/pipe.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">파이프</figcaption>
+</figure>
+</div>
 <p>이 간단한 기호가 어떻게 긴 코드를 작성하는데 도움을 준다는 것일까요?</p>
 <p>위의 그림에서 볼 수 있는 것처럼, 파이프는 함수의 <strong>첫 번째 인수</strong>를 <strong>함수의 왼쪽</strong>에 쓸 수 있게 해줍니다. 이제 데이터에 함수를 두 번 연속적으로 적용해야 하는 경우를 생각해 볼까요? 일반적인 문법에서는 우리가 중학교 수학 시간에 배운 것과 같이 다음과 같이 쓰면 됩니다.</p>
 <div class="cell">

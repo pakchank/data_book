@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -277,9 +277,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="https://www.kaggle.com/competitions/kdd-cup-2014-predicting-excitement-at-donors-choose">캐글 링크</a></p>
 </blockquote>
 <p>kaggle에 가입을 완료하고, 약관 승인 절차들을 거치고 나면, 데이터탭 오른쪽 아래 ‘Download All’ 버튼을 눌러 모든 파일을 zip 압축 형태로 받을 수 있습니다. 압축된 파일이 1기가 가까이 되니, 아마 여러분 대부분들이 지금까지 다루어본 어떤 데이터보다 ’빅’데이터에 가까울 가능성이 크겠네요.</p>
-<p><strong>kaggle 그림</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/kaggle.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">캐글</figcaption>
+</figure>
+</div>
 <p>압축을 해제해 압축 파일 안에 있는 6개의 <code>csv</code> 파일을 여러분이 앞으로 사용할 프로젝트(잊지 않으셨죠?) 폴더 안에 <code>data</code>라는 폴더를 하나 만들고 그 안에 옮겨놓습니다. 다음 그림처럼요.</p>
-<p><strong>폴더 캡처</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/data_folder.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">데이터 저장</figcaption>
+</figure>
+</div>
 <p>이제 데이터를 부를 준비가 되었습니다.</p>
 </section>
 <section id="데이터-불러오기" class="level3" data-number="7.1.2">
@@ -380,18 +390,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>이렇게 데이터프레임의 변수명을 그대로 실행시키면, Rstudio 노트북 환경에서는 명령어 아래 일부가 출력 됩니다. 여기서 오른쪽 화살표는 화면에 표시된 것 말고도 다른 열이 더 있다는 것을 의미합니다. 그 화살표를 클릭하면 화면이 오른쪽으로 넘어가게 됩니다. 그리고 표 아래에는 인터넷 게시판처럼, 페이지를 선택할 수 있습니다. 이는 화면에 출력된 것 말고도 행이 더 남아 있다는 것을 의미하지요. 그곳에 있는 숫자를 클릭하면 다음 페이지를 볼 수 있습니다.</p>
-<p><strong>그림</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/arrow.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">노트북 환경에서 데이터 프레임 확인</figcaption>
+</figure>
+</div>
 <p>그것 말고도 데이터프레임을 탐색하기 위한 방법은 여러가지가 있습니다. 어떤 식으로든 변수가 생성되고 나면, <code>Rstudio</code>의 기본 설정상 오른쪽 상단에 있는 <code>Environment</code> 창에 지금 메모리에 저장되어 있는 변수들이 표시됩니다.</p>
-<p><strong>그림</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/environment.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Environment에서 변수 확인</figcaption>
+</figure>
+</div>
 <p>지금 보면, 아까 우리가 불러온 <code>donations</code> 데이터 프레임과 <code>projects</code> 데이터프레임이 저장되어 있네요. <code>projects</code>를 클릭해 보겠습니다.</p>
-<p><strong>그림</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/environment_projects.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Environment에서 데이터프레임 확인</figcaption>
+</figure>
+</div>
 <p>그러면 우리가 엑셀에서 보는 것과 유사하게 스크롤 할 수 있는 테이블 화면이 떠오릅니다. 여기서는 조금 더 익숙한 방식으로 여러 데이터를 살펴보실 수 있을 것입니다.</p>
 <p>데이터가 많은 경우에 별로 권장되지는 않지만 콘솔에서 탐색하는 방법도 있습니다. 콘솔에서 다음과 같은 코드를 실행시켜보세요.</p>
 <blockquote class="blockquote">
 <p>head(projects)</p>
 </blockquote>
 <p>그러면 다음과 같은 화면이 등장할 것입니다. 콘솔은 노트북과 달리 사람이 조작할 수 있는 환경을 제공하지 못하기 때문에, 한 번에 표현할 수 있는 것 이상의 데이터는 생략이 되어 표시된다는 것을 알 수 있습니다.</p>
-<p><strong>그림</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/environment_projects_head(projects).png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">head()함수를 이용한 데이터프레임 확인</figcaption>
+</figure>
+</div>
 <p>콘솔에서는 다음과 같은 명령어가 더욱 유용합니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(projects)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -646,7 +676,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="join" class="level3" data-number="7.2.4">
 <h3 data-number="7.2.4" class="anchored" data-anchor-id="join"><span class="header-section-number">7.2.4</span> join</h3>
 <p>두 테이블을 연결하고 싶은 경우도 있습니다. 앞서 본 <code>projects</code>와 <code>donations</code>의 관계가 바로 그렇습니다. <code>donations</code> 테이블에 기록된 것은 각각의 기부들인데, 각 기부는 특정 프로젝트를 위한 것일테니, 기부에 대한 정보와 프로젝트에 대한 정보는 연결될 수 있겠지요. <code>donations</code> 테이블에는 <code>projectid</code>라는 열이 있는데, 이것이 바로 어떤 프로젝트에 대한 기부인지를 표현해 주는 정보입니다. 그리고 똑같은 이름의 열이 <code>projects</code> 테이블에도 존재합니다. 이 테이블에서 <code>projectid</code>는 각 프로젝트의 고유번호겠지요. 따라서, <code>donations</code> 테이블에 있는 <code>projectid</code>가 일치하는 프로젝트를 <code>projects</code> 테이블에서 찾으면 해당 프로젝트에 대한 정보를 찾을 수 있겠지요.</p>
-<p><strong>donations - projects 그림</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/ProjectID.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Join 가능한 테이블의 예</figcaption>
+</figure>
+</div>
 <p>더 나아가, <code>projectid</code>를 이용해 두 테이블을 연결하는 것도 가능합니다. 이를 데이터베이스 용어로 ’join’이라고 합니다.</p>
 <p>donorschoose.org의 큰 테이블을 join하기에 앞서, 아주 간단한 예로 연습을 해 보도록 하지요. 먼저 가상의 두 테이블을 만들겠습니다.</p>
 <div class="cell">
@@ -657,7 +692,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ColB=</span><span class="fu">c</span>(<span class="st">"F1"</span>,<span class="st">"F2"</span>,<span class="st">"F4"</span>))</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>각 테이블은 출력해보면 알겠지만, 두 테이블은 다음과 같이 생겼습니다.</p>
-<p><strong>left, right 테이블 그림</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/Left_Right.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Left-Right 테이블</figcaption>
+</figure>
+</div>
 <p>테이블 이름이 left, right인 이유는 앞으로 작성할 코드에서 left 테이블을 먼저, 즉, 왼쪽에 써주고, right 테이블을 나중에, 즉, 오른쪽에 써 줄 것이기 때문입니다.</p>
 <p>이 두 테이블이 <code>Key</code>열을 이용해 연결 가능하다는 것은 바로 아시겠지요? 다만, 문제가 있습니다. left 테이블에는 <code>Key</code>의 값으로 1,2,3이 있고, 오른쪽 테이블에는 1,2,4가 있습니다. 즉, 연결이 안 되는 값이 있습니다. 이 때 왼쪽, 오른쪽 중 어느 테이블을 기준으로 두 테이블을 붙여줄 것인가에 따라, ’left join’과 ’right join’이 구분됩니다.</p>
 <p>먼저 left join 입니다.</p>
@@ -813,7 +853,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>pivot_wider()</code> 함수의 인수와 <code>pivot_longer()</code> 함수의 인수가 미묘하게 다르다는 점을 잘 봐두세요. <code>pivot_longer()</code> 함수의 인수는 <code>names_from</code>, <code>values_from</code>이 아니라 <code>names_to</code>, <code>values_to</code> 입니다. 해당 인수들이 무엇을 의미하는지는 <code>pivot_wider()</code>를 잘 이해 했다면 이 역시 잘 이해할 수 있을 것입니다. 더 중요한 차이는 <code>cols</code>라는 인수입니다. 이는 내가 ‘길게’만들어 주고 싶은 칼럼을 정해주는 것입니다. 위의 예에서 <code>!country</code>라고 한 것은 <code>country</code> 칼럼 말고 ’나머지’(not) 부분을 길게 만들어달라는 뜻입니다.</p>
 <p>지금까지의 이야기를 요약하면 다음 그림과 같습니다.</p>
-<p><strong>그림 여기서 가져오기.</strong> https://tavareshugo.github.io/r-intro-tidyverse-gapminder/09-reshaping/index.html</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/manipulate/pivot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">피벗 개념</figcaption>
+</figure>
+</div>
 <p>그런데, 이런 피봇은 왜 하게 될까요? 여러 이유가 있겠지만, 가장 중요한 이유는 내가 분석이나 시각화를 위해 사용하고 싶은 함수가 특정 포맷으로 되어 있는 데이터를 요구하기 때문입니다. 단적으로, 앞으로 이용할 시각화 툴들은 long 포맷을 요구합니다. 하지만, 만약 여러분이 wide 포맷의 데이트를 입수했다면 피봇을 해야 하는 것이지요.</p>
 
 

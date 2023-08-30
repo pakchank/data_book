@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -271,7 +271,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Theme</li>
 </ol>
 <p>다음 그림은 이를 표현하고 있습니다.</p>
-<p><strong>계층 그림</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/visualize/ggplot2_layers.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">ggplot2의 계층 개념</figcaption>
+</figure>
+</div>
 <ol type="1">
 <li><p>Data 계층은 <code>ggplot2</code>로 시각화하고 싶은 테이블 형태의 데이터를 의미합니다. 해당 데이터에 포함된 각 컬럼은 ’변수’를 나타내는데, 시각화에 대해 이야기 할 때는 데이터에 포함된 변수를 <strong>외부변수</strong>라고 부르겠습니다.</p></li>
 <li><p>그 위에 Aesthetics 계층이 얹혀집니다. Aesthetics 계층은 Data계층에 포함된 <strong>외부변수</strong>와 <code>ggplot2</code>가 스스로 이해할 수 있는 <strong>내부변수</strong> 간의 연결을 만들어 줍니다. 그러한 내부변수들로는 다음과 같은 것들이 있습니다.</p>
@@ -798,7 +803,12 @@ i Specify the column types or set `show_col_types = FALSE` to quiet this message
 <p>이 시각화를 만들어 내는데 필요한 테크닉은 모두 앞에서 배운 것이지만, 과정이 조금 길었지요. 두 개의 데이터를 로드해서, 각각의 데이터를 분석한다음, 그 결과를 <code>join</code>한 후, long form 데이터로 변형해 최종적으로 <code>ggplot2</code>을 적용했습니다. 그런데, 이러한 긴 과정에 한 번에 바로 떠오르는 사람은 별로 없습니다. 데이터 분석의 경험이 부족하면 할수록 더욱 그렇지요.</p>
 <p>그러면, 실제로 데이터를 분석할 때 이 긴 과정을 어떻게 미리 설계해야 하는 것일까요? 어떻게 보면 분석에 필요한 코딩 기술보다 이 과정에 익숙해지는 것이 더 중요합니다. 분석은 다른 사람이 도와줄 수도 있는 것이니까요.</p>
 <p>답은 간단합니다. 앞에서 한 분석과 반대의 순서를 따르면 됩니다. 앞서의 워크 플로우를 표현하면 다음과 같습니다.</p>
-<p><strong>그림: 로드 -&gt; 분석 -&gt; join -&gt; pivot -&gt; 시각화</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/visualize/workflow.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">시각화를 위한 워크플로우</figcaption>
+</figure>
+</div>
 <p>하지만 계획은 반대로 하는 것이지요. 이를 조금 더 자세히 설명해 보겠습니다.</p>
 <ol start="0" type="1">
 <li><p>질문 만들기: 일단 좋은 질문이 있어야 겠지요.</p></li>

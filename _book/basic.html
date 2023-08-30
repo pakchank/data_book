@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -309,7 +309,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>변수(variable): 거기에 붙은 이름</p></li>
 <li><p>할당(assign): 값을 변수로 만드는 행위. <code>R</code>에서는 <code>&lt;-</code> 부호를 사용함. (사실은 <code>=</code>을 사용할 수도 있지만, 구분하겠습니다.)</p></li>
 </ul>
-<p><em>그림</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/install/value_variable.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">값-변수-할당의 관계</figcaption>
+</figure>
+</div>
 <p>사람의 언어에 비유해서 설명하자면, 값과 변수는 <em>명사</em>, 또는 <em>목적어</em>에 해당합니다. 많은 경우에는 이렇게 주어진 대상에 어떤 행위를 하고 싶어하지요. 우리는 그것을 <em>연산</em>이라고 합니다. 그리고 그러한 <em>연산</em>을 문법으로 표현한 것을 <em>함수(function)</em>라고 하지요. 인간의 언어에서라면 함수는 <em>동사</em>에 해당합니다.</p>
 <p><em>그림</em></p>
 <p>우리는 위의 예에서 이미 함수를 보았습니다. <code>print()</code>가 그것입니다. 이것은 주어진 값을 콘솔에 출력하는 동작을 의미하는 것이니 <em>동사</em>라고 할 수 있습니다. 그러면 동사와 명사를 구분하듯, <code>R</code>에서 변수와 함수를 구분할 수 있을까요? 구분할 수 있습니다. 여러 방법이 있지만, 가장 간단한 방법은 문자열 뒤에 <em>괄호</em>가 있는지 보는 것입니다. 변수는 괄호가 없습니다. 하지만, 함수는 <code>print()</code>처럼 괄호가 있지요.</p>
@@ -317,7 +322,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p><code>c</code>를 콘솔에 <code>print()</code>하라.</p>
 </blockquote>
-<p><em>그림 (변수, 함수)</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/install/input_output.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">함수의 작동</figcaption>
+</figure>
+</div>
 <p>이렇게 값이나 변수가 함수가 하는 연산의 대상이 되면, 즉, 함수의 괄호 안에 들어가면, 이를 입력값(input), 또는 인수(argument)라고 합니다. 입력값을 받았으니 함수는 연산의 결과로 출력값(output)을 내어놓겠지요. 사실 더 정확한 표현은 다음과 같습니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="at">x=</span>c)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -326,7 +336,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>여기서 <code>x</code>는 <code>print()</code>라는 함수의 매개변수(parameter), <code>c</code>는 그 매개변수에 집어넣은 인수, 또는 입력값입니다. 매개변수는 <code>print()</code>라는 함수가 그 내부에서 사용하는 변수입니다. <code>print()</code>라는 함수는 내부에서 <code>x</code>라는 변수를 이용해 행위를 하지, <code>c</code>라는 함수 밖에 존재하는 변수에 대해서는 알지 못합니다. 그런데 <code>x=c</code>라고 하는 순간, 이용자는 함수에게 “네가 이용할 <code>x</code>가 바로 바로 <code>c</code>라는 변수에 들어있는 값이야”라고 연결해 주는 것입니다.</p>
-<p><em>그림 (x=c)</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/install/parameter_argument.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">함수와 인수</figcaption>
+</figure>
+</div>
 <p>그러면 <code>print()</code>는 자신이 이용하는 <code>x</code>라는 그릇에 <code>c</code>에 이미 연결되어 있는 값을 담고 그것을 출력하는 행위를 하게 됩니다.</p>
 <p>그런데 왜 첫번째 예에서는 <code>x=</code>을 생략하고 <code>print(c)</code>라고 했는데도 작동했을까요? 그것은 <code>print()</code> 함수 자체가 첫번째로 입력한 숫자를 <code>x</code>에 대응하는 인수로 자동으로 인식하도록 프로그램 되어 있기 때문입니다. 무언가를 출력하라고 하는 명령은 수없이 사용하게 될텐대, 매번 매개변수를 반복행 하면 너무 귀찮겠지요.</p>
 <p>그런데, 모든 함수가 인수를 필요로 하는 것은 아닙니다. 자연언어에서 동사 역시 자동사와 타동사로 구분되는 것과 같은 이치입니다. 예컨대 다음과 같은 함수는 인수 없이 실행 됩니다.</p>
@@ -474,7 +489,7 @@ $height
 <pre><code>[1] "Male"   "Female" "Female"</code></pre>
 </div>
 </div>
-<p>대괄호를 두번 써 주었다는 것([[)에 유의해 주세요. 정확하게 같은 결과가 나오지만, 이 때는 키(key)를 따옴표를 써서 문자열로 제시해 주어야 합니다. 사실 <code>persons$gender</code>는 이 코드를 조금 더 간단하게 쓰기 위한 약어라고 생각하시면 되겠습니다. 사실 <code>gender</code>는 <code>persons</code> 리스트에서 두번째 키이기 때문에 다음과 같이 써도 결과는 같습니다.</p>
+<p>대괄호를 두번 써 주었다는 것(‘[[’)에 유의해 주세요. 정확하게 같은 결과가 나오지만, 이 때는 키(key)를 따옴표를 써서 문자열로 제시해 주어야 합니다. 사실 <code>persons$gender</code>는 이 코드를 조금 더 간단하게 쓰기 위한 약어라고 생각하시면 되겠습니다. 사실 <code>gender</code>는 <code>persons</code> 리스트에서 두번째 키이기 때문에 다음과 같이 써도 결과는 같습니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>persons[[<span class="dv">2</span>]]</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

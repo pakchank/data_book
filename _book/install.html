@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -285,10 +285,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>물론, 여러분이 나중에 작성하게될 코드는 이 보다 훨씬 복잡합니다. 간단하게는 몇 줄, 조금 복잡한 분석을 한다면 수백, 수천줄 짜리 코드를 작성하는 일도 많죠 (이 교재에서는 10줄, 고작해야 20줄을 넘는 일도 거의 없을 것입니다. 그 정도로도 당분간 충분하니 걱정마세요!). 그렇다면 코드를 한줄 쓰고 실행하는 이런 단순한 방식은 아무래도 불편하겠지요. 그것이 아니더라도, 위의 화면은 무엇인가 90년대 컴퓨터에서나 돌아갈 것 같은 구닥다리 같은 느낌이 있지요. 사실 앞서 이야기한 R의 다양한 기능을 최대한 활용하기 위해서 대부분의 사람들은 위와 같은 화면에서 R을 사용하지 않습니다. 대신 Rstudio를 사용하지요.</p>
 <p>여러분 컴퓨터에 설치된 Rstudio를 사용하는 가장 간단한 방법은 윈도우즈 화면 하단 시작 버튼 옆의 검색창에 ’Rstudio’라고 검색해 보는 것입니다. Rstudio가 올바르게 설치되어 있다면, 다음과 유사한 화면을 보게 될 것입니다.</p>
-<p><img src="img/rstudio_start.png" class="img-fluid" alt="Rstudio 시작"> 이제 Rstudio를 선택해서 프로그램을 실행시키면 다음과 같은 화면이 나타납니다. <img src="img/rstudio.png" class="img-fluid" alt="Rstudio 첫 화면"> 바탕화면은 초기설정에 따라 위와 같이 어두운 색이기도, 밝은 색이기도 합니다. 아무래도 R을 실행했을 때보다 어딘가 프로패셔널해보이기도 하지요? Rstudio는 R을 편리하게 사용할 뿐만 아니라, R의 더 많은 기능을 이끌어내기 위해 만들어낸 인터페이스라고 생각하시면 됩니다. 전문적인 용어로는 통합개발환경(IDE)라고 하지요. 비유하자면, R가 엔진이라면, Rstudio는 여러분이 직접 운전하는 자동차와 같은 관계이지요. 엔진을 이용해 직접 가능한 탈것을 만드는 사람은 극히 제한적이듯, 대부분의 사람들은 Rstudio를 사용하지, R을 직접 사용하지 않습니다. 따라서, 여러분들 역시 앞으로 Rstudio만을 사용하게 될 것입니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><embed src="교재 그림/install/R과 Rstudio간의 관계(수정).pdf" class="img-fluid"></p>
+<p><img src="img/rstudio_start.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Rstudio 시작</figcaption>
+</figure>
+</div>
+<p>이제 Rstudio를 선택해서 프로그램을 실행시키면 다음과 같은 화면이 나타납니다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Rstudio 첫 화면</figcaption>
+</figure>
+</div>
+<p>바탕화면은 초기설정에 따라 위와 같이 어두운 색이기도, 밝은 색이기도 합니다. 아무래도 R을 실행했을 때보다 어딘가 프로패셔널해보이기도 하지요? Rstudio는 R을 편리하게 사용할 뿐만 아니라, R의 더 많은 기능을 이끌어내기 위해 만들어낸 인터페이스라고 생각하시면 됩니다. 전문적인 용어로는 통합개발환경(IDE)라고 하지요. 비유하자면, R가 엔진이라면, Rstudio는 여러분이 직접 운전하는 자동차와 같은 관계이지요. 엔진을 이용해 직접 가능한 탈것을 만드는 사람은 극히 제한적이듯, 대부분의 사람들은 Rstudio를 사용하지, R을 직접 사용하지 않습니다. 따라서, 여러분들 역시 앞으로 Rstudio만을 사용하게 될 것입니다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/install/r_rstudio.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">R과 Rstudio 간의 관계</figcaption>
 </figure>
 </div>
