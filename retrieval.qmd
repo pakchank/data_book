@@ -64,7 +64,8 @@ install.packages(c("httr","jsonlite","xml2"))
 HTTP(Hyptertext Transfer Protocol)는 웹페이지에 대한 정보를 담고 있는 서버 컴퓨터와 이용자의 컴퓨터 사이에 정보를 교환하기 위한 규칙으로, 여러분들이 웹브라우저에서 'HTTP' 또는 'HTTPS'로 시작되는 웹페이지 주소를 사용할 때 늘 사용하고 있는 규칙입니다. 표준적인 웹API는 소프트웨어 사이에 정보를 주고받는데 바로 이 HTTP를 사용하기 때문에, R에서 웹API를 사용하려면 `R`이 브라우저 처럼 HTTP를 이용해 외부 컴퓨터와 정보를 주고 받게 해 주는 패키지, 즉, `httr`을 이용해야 하는 것입니다. 
 
 여느 패키지를 이용할 때처럼, 해당 패키지를 불러오도록 합시다.
-```{r}
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
 library(httr)
 ```
 

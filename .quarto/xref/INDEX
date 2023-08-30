@@ -37,5 +37,17 @@
   },
   "visualize.qmd": {
     "visualize.html": "4aaa401a"
+  },
+  "retrieval.qmd": {
+    "retrieval.html": "828c73e8"
+  },
+  "story.qmd": {
+    "story.html": "7c577848"
+  },
+  "story2.qmd": {
+    "story2.html": "7d3cf25a"
+  },
+  "appendix-install.qmd": {
+    "appendix-install.html": "d40876ec"
   }
 }

@@ -7,3 +7,6 @@
 *essays.csv
 *outcomes.csv
 *resources.csv
+.Rproj.user
+
+/.quarto/
