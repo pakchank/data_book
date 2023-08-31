@@ -477,10 +477,29 @@ i Please use the `linewidth` argument instead.</code></pre>
 <p><img src="story2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>이번엔 그래프가 상당히 복잡해 보이지만, 사실은 이미 위에서 다룬 테크닉들입니다. 다음의 세부사항만 주의하시길 바랍니다.</p>
+<p>이번엔 그래프가 상당히 복잡해 보이지만, 사실 대부분 이미 위에서 다룬 테크닉들입니다. 다음의 새로운 도구들에만 주의 깊게 봐주시길 바랍니다.</p>
 <ul>
-<li>숫자표현(richtext), bump</li>
-<li>색상 - 이번엔 grey 등등 대신에 hexa 코드 사용하였음!</li>
+<li><p>그래프상 숫자(%) 표현:</p>
+<ul>
+<li><p>데이터상의 수치를 그대로 그래프에 표시하는 함수(즉, ggplot2의 geometry 계틍)는 <code>geom_text()</code>입니다. 해당 함수 안에서 <code>aes()</code>를 통해 내부변수 <code>label</code>과 텍스트로 표시하고자 하는 외부변수 (위의 예에서는 <code>agree</code>)를 매칭해 주시면 됩니다.</p></li>
+<li><p>그러나 <code>geom_text(aes(label=agree))</code> 이렇게 바로 사용하게 되면 <code>agree</code> 변수가 단순히 숫자이므로 %로 표시되지 않고, 단순히 숫자로 표시될 것입니다. 이 때 사용하기 위에 우리는 앞서 <code>glue</code>라는 라이브러리를 불러왔습니다. <code>glue</code> 라이브러리의 <code>glue()</code> 함수를 이용하면, 쉽게 외부 데이터 변수에 특정 문자열을 붙여서 표현할 수 있습니다. 즉, <code>glue({agree}%)</code>라고 쓰면, <code>agree</code> 변수에 들어있는 각각의 값에 %기호를 붙여서 표현하라는 의미입니다.</p></li>
+<li><p>또 하나의 추가적인 문제는 숫자가 표시되는 위치입니다. 단순히 <code>geom_text(aes(label=agree)</code> 라고 쓰는 경우, 숫자는 정확히 해당 숫자에 해당하는 위치에 표시되게 됩니다. 문제는 그 위치가 <code>geom_point()</code> 함수가 점을 표현하는 위치와 동일하다는 것이지요. 따라서, 점과 숫자가 겹쳐 보이게 됩니다. 때문에, 숫자가 표시될 위치에 해당하는 변수를 하나 새로 만들어, 원래 <code>agree</code> 변수에서 작은 숫자는 왼쪽으로 (즉, 더 작게), 큰 숫자는 오른쪽으로 (즉, 더 크게) 수치 표시 위치를 표현해 줄 수 있도록 하고, 이를 내부변수 <code>x</code> 매칭시켜주어야 합니다. 다음 부분이 거기에 해당합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>… </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">increase =</span> <span class="fu">ifelse</span>(agree <span class="sc">==</span> <span class="fu">max</span>(agree), <span class="cn">TRUE</span>, <span class="cn">FALSE</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">bump =</span> <span class="fu">ifelse</span>(increase, agree <span class="sc">+</span> <span class="dv">2</span>, agree <span class="sc">-</span> <span class="dv">2</span>))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>…</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label=</span><span class="fu">glue</span>(<span class="st">"{agree}%"</span>), <span class="at">x=</span>bump), <span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>...</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>즉, 한 국가 안에서 더 큰 <code>agree</code> 수치(대부분의 경우는 8월 수치에 해당합니다)를 <code>TRUE</code>로, 더 작은 수치를 <code>FALSE</code>로 표현하는 <code>increase</code>라는 변수를 하나 만든 다음, <code>increase</code>가 TRUE에 해당하면(즉, 더 큰 수이면) 원래 <code>agree</code> 수치에 2를 더한 숫자를, <code>increase</code>가 FALSE에 해당하면(즉, 더 작은 수이면) 원래 <code>agree</code>수치에 2를 뺀 숫자를 갖는 <code>bump</code>라는 새로운 변수를 만들었고, <code>geom_text()</code>함수에서 원래의 <code>agree</code> 대신 새로운 변수 <code>bump</code>를 <code>x</code>에 대응시키는 방식으로 위치를 조정해 준 것입니다.</p></li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li>‘8월’, ’10월’과 같은 데이터에 없는 문자 표현은 <code>geom_richtext()</code>라는 함수를 사용하였습니다. 이 역시 <code>ggtext</code> 라이브러리에 포함된 함수입니다.</li>
+<li>색상은 ‘grey’, ’white’와 같은 표현 대신에 “#727272”, “#15607a”와 같은 표현을 사용했습니다. 이는 ’헥사코드’라고 부르는 색상 표현 방식으로, 여섯자리 16진수를 이용해 1600만개가 넘는 다양한 색상을 표현할 수 있습니다. 훨씬 더 전문적으로 보이는 색상을 ggplot2로 구현하는데 이용할 수 있을 뿐만 아니라, 웹프로그래밍의 표준 색상 표현 방식이므로, 전문가들이 이미 만들어 둔 전문적인 색상 조합을 이용하는데에도 유리하고요. 원하는 색상의 헥사코드를 알려주는 [웹사이트](https://htmlcolorcodes.com/)가 이미 많이 있으므로, 이들을 이용해서 원하는 색상으로 완벽하게 커스터마이징 하는 것 역시 가능합니다.</li>
 </ul>
 </section>
 <section id="아파트-실거래가-데이터-받기" class="level2" data-number="12.4">
