@@ -22,6 +22,7 @@ book:
     - retrieval.qmd
     - story.qmd
     - story2.qmd
+    - spatial.qmd
     - appendix-install.qmd
 
 #bibliography: references.bib
