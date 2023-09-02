@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R의 기초</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manipulate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">크라우드펀딩 빅데이터 불러오기, 분석 가능한 형태로 만들기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -238,8 +238,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#tidyverse-처음-사용하기" id="toc-tidyverse-처음-사용하기" class="nav-link" data-scroll-target="#tidyverse-처음-사용하기"><span class="header-section-number">6.2</span> Tidyverse 처음 사용하기</a>
   <ul class="collapse">
-  <li><a href="#서브세트" id="toc-서브세트" class="nav-link" data-scroll-target="#서브세트"><span class="header-section-number">6.2.1</span> (1) 서브세트</a></li>
-  <li><a href="#파이프" id="toc-파이프" class="nav-link" data-scroll-target="#파이프"><span class="header-section-number">6.2.2</span> (2) 파이프</a></li>
+  <li><a href="#서브세트" id="toc-서브세트" class="nav-link" data-scroll-target="#서브세트"><span class="header-section-number">6.2.1</span> 서브세트</a></li>
+  <li><a href="#파이프" id="toc-파이프" class="nav-link" data-scroll-target="#파이프"><span class="header-section-number">6.2.2</span> 파이프</a></li>
   <li><a href="#서브세트와-파이프를-동시에" id="toc-서브세트와-파이프를-동시에" class="nav-link" data-scroll-target="#서브세트와-파이프를-동시에"><span class="header-section-number">6.2.3</span> (3) 서브세트와 파이프를 동시에!</a></li>
   </ul></li>
   </ul>
@@ -272,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>R</code>뿐만 아니라, 많은 다른 언어에서 ’패키지’라고 하는 것은 쉽게 말하자면 유용한 함수들의 묶음을 의미합니다. 기본 <code>R</code>을 설계한 사람들이 <code>R</code>에 내장해두지는 않았지만, 특정 목적을 위해서는 유용함 도구들이 묶여서 ’패키지’로 제공된다고 생각하면 되겠습니다. 비유하자면, 여러분들이 매일 사용하는 ’카카오톡’이 <code>R</code>이라고 해 보죠. 카카오톡 안에는 기본적인 채팅 기능 안에도 수많은 다른 기능들이 있지요? 선물을 주고 받을 수도 있고, 음식을 주문할 수도 있고, 쇼핑을 할 수도 있습니다. 물론 모든 이용자들이 이 기능들을 모두 사용하지는 않지요. 하지만, 어떤 사람들은 자주 사용합니다. 이러한 세부 기능에 해당 하는 일종의 카카오톡 안의 ’미니 프로그램’을 <code>R</code>에서는 패키지라고 부른다고 생각하면 되겠습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/tidy/kakaotalk_miniprogram.jpg" class="img-fluid figure-img"></p>
+<p><img src="pics/tidy/kakaotalk_miniprogram.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption class="figure-caption">카카오 미니프로그램</figcaption>
 </figure>
 </div>
@@ -322,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>그 외에 <code>tidyverse</code>의 다른 요소들은 학습이 심화되면서 차차 마주하게 될 것입니다.</p>
 <p>첫번째, 서브세트는 우리가 앞장에서 이미 보았던 서브세트, 즉, 데이터의 일부만을 취하는 방법입니다. <code>R</code>은 이미 좋은 서브세트 기능을 제공하지만, 앞서 말했듯 해당 문법이 가독성이 아주 좋지는 않다고 했습니다. 따라서 <code>tidyverse</code>에서 제공하는 방식의 서브세트를 이용할 것입니다. 두번째 ’파이프’는 긴 코드를 연결해서 간결하게 작성하는데 필요한 일종의 코드 작성법 입니다. 차례차례 살펴보지요.</p>
 <section id="서브세트" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="서브세트"><span class="header-section-number">6.2.1</span> (1) 서브세트</h3>
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="서브세트"><span class="header-section-number">6.2.1</span> 서브세트</h3>
 <p><code>tidyverse</code>의 서브세트는 기본적으로 <code>R</code> 데이터구조 중 데이터프레임에 적용되는 것입니다. 벡터나 리스트를 사용할 때에는 기본 <code>R</code> 문법을 사용하면 됩니다. 데이터프레임을 서브세트 하는 방법에는 행을 취하는 방법과 열을 취하는 방법이 있었습니다. 다음을 기억해 두세요. <code>tidyverse</code>에서는:</p>
 <ol type="1">
 <li>열을 취할 때에는 항상 <code>select()</code>함수와 열의 ’이름’을 사용합니다.</li>
@@ -397,11 +397,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>이것은 여성’이거나(OR)’ 키가 170 이상인 사람에 해당하는 행을 돌려달라는 것이겠지요? 이는 데이터 전체에 해당하네요.</p>
 </section>
 <section id="파이프" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="파이프"><span class="header-section-number">6.2.2</span> (2) 파이프</h3>
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="파이프"><span class="header-section-number">6.2.2</span> 파이프</h3>
 <p>파이프는 코드를 길게 써야 할 때 필요한 사용하는 코딩 스타일 입니다. 파이프를 위해서는 ’파이프’로 불리는 기호가 하나 필요합니다. 바로 다음 기호 입니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/tidy/pipe.png" class="img-fluid figure-img"></p>
+<p><img src="pics/tidy/pipe.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption class="figure-caption">파이프</figcaption>
 </figure>
 </div>
@@ -700,7 +700,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./manipulate.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">크라우드펀딩 빅데이터 불러오기, 분석 가능한 형태로 만들기</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

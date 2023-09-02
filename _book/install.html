@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R의 기초</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manipulate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">크라우드펀딩 빅데이터 불러오기, 분석 가능한 형태로 만들기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -260,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>이러한 유용성 때문에, 많은 데이터 저널리즘 전문가들은 R을 광범위하게 사용하고 있습니다. 특히 데이터 저널리즘 발전에서 선구적인 역할을 한 미국의 <a href="https://fivethirtyeight.com/">FiveThrityEight</a>이 그렇고, 또 영국이 유명 주간지인 <a href="https://www.economist.com/">The Economist</a>도 그렇습니다. 많은 사람들이 쓰는 프로그램이라는 것은 대단히 큰 이점입니다. 왜냐하면 프로그래머들은 자신이 아는 것, 알아낸 것을 많은 대중과 공유하는 고마운(?) 문화를 가지고 있기 때문이지요. 이러한 문화 덕분에 프로그래밍을 하다가 문제에 봉착했을 때, R과 같이 인기 있는 프로그램의 경우 잠깐의 인터넷 검색을 통해 대부분 그 답을 알 수 있는 것은 물론입니다. 하지만, 더 좋은 점은 데이터 저널리즘 전문가들이 자신이 데이터 수집, 분석, 보도에 사용한 코드와 데이터를 모두 공유하기도 한다는 점이지요. 다음 그림은 FiveThirtyEight이 프로그래밍 협업 플랫폼으로 유명한 <a href="https://github.com/">Github</a>에 자신들이 사용한 코드와 데이터를 공유하고 있는 모습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/five_resp.png" class="img-fluid figure-img"></p>
+<p><img src="img/five_resp.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption class="figure-caption">FiveThirtyEight의 Github 페이지</figcaption>
 </figure>
 </div>
@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>먼저, R은 윈도우 시작 버튼을 눌러 실행할 수 있습니다. 시작 화면에서 전체 애플리케이션을 열면, 여러분의 컴퓨터에 설치된R은 보통 다음과 같이 나타납니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/R_start.png" class="img-fluid figure-img"></p>
+<p><img src="img/R_start.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <figcaption class="figure-caption">윈도우즈에서 R 실행하기</figcaption>
 </figure>
 </div>
@@ -293,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>여러분 컴퓨터에 설치된 Rstudio를 사용하는 가장 간단한 방법은 윈도우즈 화면 하단 시작 버튼 옆의 검색창에 ’Rstudio’라고 검색해 보는 것입니다. Rstudio가 올바르게 설치되어 있다면, 다음과 유사한 화면을 보게 될 것입니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/rstudio_start.png" class="img-fluid figure-img"></p>
+<p><img src="img/rstudio_start.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption class="figure-caption">Rstudio 시작</figcaption>
 </figure>
 </div>
@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>바탕화면은 초기설정에 따라 위와 같이 어두운 색이기도, 밝은 색이기도 합니다. 아무래도 R을 실행했을 때보다 어딘가 프로패셔널해보이기도 하지요? Rstudio는 R을 편리하게 사용할 뿐만 아니라, R의 더 많은 기능을 이끌어내기 위해 만들어낸 인터페이스라고 생각하시면 됩니다. 전문적인 용어로는 통합개발환경(IDE)라고 하지요. 비유하자면, R가 엔진이라면, Rstudio는 여러분이 직접 운전하는 자동차와 같은 관계이지요. 엔진을 이용해 직접 가능한 탈것을 만드는 사람은 극히 제한적이듯, 대부분의 사람들은 Rstudio를 사용하지, R을 직접 사용하지 않습니다. 따라서, 여러분들 역시 앞으로 Rstudio만을 사용하게 될 것입니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/install/r_rstudio.png" class="img-fluid figure-img"></p>
+<p><img src="pics/install/r_rstudio.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption class="figure-caption">R과 Rstudio 간의 관계</figcaption>
 </figure>
 </div>
@@ -558,7 +558,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./basic.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R의 기초</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

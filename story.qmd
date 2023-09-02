@@ -50,11 +50,11 @@ https://kimhaksung.tistory.com/entry/gestalt
 
 유사하게 '유사성의 법칙(Law of Similarity)', '연속성의 법칙(Law of Continuity)' 같은 것들도 있습니다. 즉, 모양이 비슷한 것, 연속적으로 이어져 있는 것을 통해 인간의 관계를 자연스럽게 인식한다는 것입니다. 
 
-![유사성과 연속성](pics/story/similarity_continuity.png)
+![유사성과 연속성](pics/story/similarity_continuity.png){width=70%}
 
 '폐쇄성의 법칙(Law of Closure)' 같은 것도 흥미롭습니다. 아래의 예를 보면, 사람은 삼각형이 명확하게 그려져 있지 않아도 이중 삼각형 구조를 이해할 수 있습니다. 인간의 뇌가 완성되어 있지 않은 폐쇄 구조를 알아서 완성하기 때문이지요. 
 
-![폐쇄성](pics/story/closure.png)
+![폐쇄성](pics/story/closure.png){width=70%}
 
 이러한 게슈탈트 법칙을 어떤 사람들의 '형상 인지의 경제 법칙'이라고 표현하기도 합니다. 즉, 인간이 한정된 인지 자원과 정보를 가지고도 '효율적으로', 많은 인지자원을 쓰지 않고 형상을 인지할 수 있게 해 주는 시스템 같은 것을 가지고 있다는 이야기지요. 그렇다면, 우리는 인간이 자연스럽게 받아 들일 수 있는 형상의 인지 능력을 어느 정도 믿고, 그러한 능력을 보완해주기 위한 부가 정보는 과감하게 생략해도 좋겠지요. 이제 시각화에서 그러한 예를 한 번 보도록 하겠습니다. 
 
@@ -100,6 +100,7 @@ library(tidyverse)
 library(lubridate)
 options(scipen=999)
 projects <- read_csv("data/projects.csv")
+Sys.setlocale("LC_ALL","Korean")
 ```
 
 ```{r}
@@ -221,16 +222,3 @@ projects |>
 ```
 한글이 섞여있어 익숙하게 보일지 모르겠습니다만, 이 테마는 영국의 유명한 주간지 <The Economist>가 사용하는 테마입니다. 유사하게 `theme_wsj()`, `scale_colour_wsj()` 함수를 이용해 <월스트리트저널>의 테마를 이용하는 것도 가능합니다. 
 
-
-
-**To-do: 저작권 clearance 필요 / 다시 그리는 것도 고려할 것.**
-**To-do's: 그래프, 생략 예**
-
-
-
-**To-do's: 좋은 예 두 가지만**
-
-## CSS, 웹 프로그래밍 응용하기 (고급 토픽)
-지금까지 이야기 한
-
-위의 그래프를 ggplot으로 표현하려면 어떻게 해야 할까요? 시각화 팀에게 부탁하는 것이 가장 편하겠지만, 직접한다면요...

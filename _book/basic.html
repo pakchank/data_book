@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>공부하는 언론인을 위한 R기반 데이터 저널리즘 - 4&nbsp; R의 기초</title>
+<title>공부하는 언론인을 위한 R기반 데이터 저널리즘 - 4&nbsp; R 프로그래밍 기초</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R의 기초</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R의 기초</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manipulate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">크라우드펀딩 빅데이터 불러오기, 분석 가능한 형태로 만들기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R의 기초</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></h1>
 </div>
 
 
@@ -317,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/install/value_variable.png" class="img-fluid figure-img"></p>
+<p><img src="pics/install/value_variable.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption class="figure-caption">값-변수-할당의 관계</figcaption>
 </figure>
 </div>
@@ -330,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/install/input_output.png" class="img-fluid figure-img"></p>
+<p><img src="pics/install/input_output.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption class="figure-caption">함수의 작동</figcaption>
 </figure>
 </div>
@@ -342,12 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>여기서 <code>x</code>는 <code>print()</code>라는 함수의 매개변수(parameter), <code>c</code>는 그 매개변수에 집어넣은 인수, 또는 입력값입니다. 매개변수는 <code>print()</code>라는 함수가 그 내부에서 사용하는 변수입니다. <code>print()</code>라는 함수는 내부에서 <code>x</code>라는 변수를 이용해 행위를 하지, <code>c</code>라는 함수 밖에 존재하는 변수에 대해서는 알지 못합니다. 그런데 <code>x=c</code>라고 하는 순간, 이용자는 함수에게 “네가 이용할 <code>x</code>가 바로 바로 <code>c</code>라는 변수에 들어있는 값이야”라고 연결해 주는 것입니다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="pics/install/parameter_argument.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">함수와 인수</figcaption>
-</figure>
-</div>
+<p>[함수와 인수](pics/install/parameter_argument.pngㅑ{width=50%}</p>
 <p>그러면 <code>print()</code>는 자신이 이용하는 <code>x</code>라는 그릇에 <code>c</code>에 이미 연결되어 있는 값을 담고 그것을 출력하는 행위를 하게 됩니다.</p>
 <p>그런데 왜 첫번째 예에서는 <code>x=</code>을 생략하고 <code>print(c)</code>라고 했는데도 작동했을까요? 그것은 <code>print()</code> 함수 자체가 첫번째로 입력한 숫자를 <code>x</code>에 대응하는 인수로 자동으로 인식하도록 프로그램 되어 있기 때문입니다. 무언가를 출력하라고 하는 명령은 수없이 사용하게 될텐대, 매번 매개변수를 반복행 하면 너무 귀찮겠지요.</p>
 <p>그런데, 모든 함수가 인수를 필요로 하는 것은 아닙니다. 자연언어에서 동사 역시 자동사와 타동사로 구분되는 것과 같은 이치입니다. 예컨대 다음과 같은 함수는 인수 없이 실행 됩니다.</p>

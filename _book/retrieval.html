@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R의 기초</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manipulate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">크라우드펀딩 빅데이터 불러오기, 분석 가능한 형태로 만들기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -351,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>‘대기오염정보’를 이용하기 위해서는 해당 메뉴얼을 읽어보아야겠지요. 그러니 압축 파일에 포함된 문서 중, ’한국환경공단_에어코리아_대기오염정보_기술문서_v1.1.docx’파일을 열어봅니다. 스크롤해 내려가다보면, ’대기오염정보 조회 서비스’ 아래 표에 ’Call Back URL’이라는 항목이 있습니다. 주소가 http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty로 되어 있네요. 이 주소가 바로 우리가 정보 요청을 위해 사용할 주소 입니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/retrieval/CALL_BACK_URL.png" class="img-fluid figure-img"></p>
+<p><img src="pics/retrieval/CALL_BACK_URL.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption class="figure-caption">Call Back URL</figcaption>
 </figure>
 </div>
@@ -366,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>셋째, 어떻게 정보를 요청하는데 대한 규칙을 알기 위해서는 다시 메뉴얼로 돌아가야 합니다. 앞서 확인한 ‘Call Back URL’ 바로 아래에 있는 표에 ’요청 메시지 명세’라는 표가 있는데요, 여기서 정보 요청의 규칙을 알 수 있습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/retrieval/message.jpg" class="img-fluid figure-img"></p>
+<p><img src="pics/retrieval/message.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption class="figure-caption">요청 메시지 명세</figcaption>
 </figure>
 </div>
@@ -382,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>res</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Response [http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?returnType=json&amp;stationName=%3CU%2BC885%3E%3CU%2BB85C%3E%3CU%2BAD6C%3E&amp;dataTerm=MONTH&amp;serviceKey=LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq%2Fea2CQUTUuisLvxlxaGm0YTp4f%2B89FfhplvwiQIe0cngpybTkdDHQ%3D%3D]
-  Date: 2023-09-02 04:15
+  Date: 2023-09-02 05:08
   Status: 200
   Content-Type: application/json;charset=UTF-8
   Size: 130 B</code></pre>
@@ -523,7 +523,7 @@ $response$header$resultCode
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>res</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Response [http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?returnType=xml&amp;stationName=%3CU%2BC885%3E%3CU%2BB85C%3E%3CU%2BAD6C%3E&amp;dataTerm=MONTH&amp;serviceKey=LGvIXqsO1eCAKjgMBQWd5QYDOJ77cd4Tq%2Fea2CQUTUuisLvxlxaGm0YTp4f%2B89FfhplvwiQIe0cngpybTkdDHQ%3D%3D]
-  Date: 2023-09-02 04:15
+  Date: 2023-09-02 05:08
   Status: 200
   Content-Type: application/xml;charset=UTF-8
   Size: 272 B
@@ -593,10 +593,10 @@ $response$header$resultCode
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(<span class="at">cols=</span><span class="fu">everything</span>(), <span class="at">keep_empty =</span> <span class="cn">TRUE</span>) </span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>그런데 <code>transpose()</code> 뒤에도 여전히 알쏭달쏭한 코드들이 붙어있지요? 그 이유는 ’transpose’한 후 테이블로 만들어 주어도 각각의 대기오염 측정치가 원 데이터의 구조상 단순한 값이 아니라, 값이 한 개 있는 작은 리스트로 변환되기 때문입니다. 비유해서 말하자면, 우리는 과일 하나하나가 필요한데, 과일과 과일이 메달린 가지 하나가 같이 왔다고 할 수 있습니다.</p>
-<p><img src="pics/retrieval/unnest.png" class="img-fluid" alt="list와 element의 관계"> 이런 문제를 다루기 위해 일반 데이터 프레임과 매우 비슷하지만 조금 더 유연한 기능을 가진 테이블 형식을 <code>tidyverse</code>가 제공하는데, 이를 <code>tibble</code>이라고 부릅니다. 데이터 프레임은 각 칸에 과일 하나만 넣을 수 있지만, <code>tibble</code>은 가지가 달린 과일로 넣을 수 있다고 생각해 보세요. 그래서 데이터 프레임으로 만들지 않고 <code>as_tibble()</code> 함수를 이용해 <code>tibble</code>로 만들었습니다. 해당 함수 역시 <code>tidyverse</code> 패키지에 속해있지요. 이제 이렇게 만들어진 <code>tibble</code>의 모든 칸에는 가지 끝에 달린 과일이 (즉, 각각의 값이 리스트 형태로) 들어있습니다.</p>
+<p><img src="pics/retrieval/unnest.png" class="img-fluid" style="width:70.0%" alt="list와 element의 관계"> 이런 문제를 다루기 위해 일반 데이터 프레임과 매우 비슷하지만 조금 더 유연한 기능을 가진 테이블 형식을 <code>tidyverse</code>가 제공하는데, 이를 <code>tibble</code>이라고 부릅니다. 데이터 프레임은 각 칸에 과일 하나만 넣을 수 있지만, <code>tibble</code>은 가지가 달린 과일로 넣을 수 있다고 생각해 보세요. 그래서 데이터 프레임으로 만들지 않고 <code>as_tibble()</code> 함수를 이용해 <code>tibble</code>로 만들었습니다. 해당 함수 역시 <code>tidyverse</code> 패키지에 속해있지요. 이제 이렇게 만들어진 <code>tibble</code>의 모든 칸에는 가지 끝에 달린 과일이 (즉, 각각의 값이 리스트 형태로) 들어있습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/retrieval/tibble.png" class="img-fluid figure-img"></p>
+<p><img src="pics/retrieval/tibble.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption class="figure-caption">Nested Tibble</figcaption>
 </figure>
 </div>
@@ -725,7 +725,7 @@ Attaching package: 'rvest'</code></pre>
 <p>위의 <code>str(tables)</code>의 결과를 보면 <code>tables</code>는 3개의 테이블로 구성된 리스트라는 것을 알 수 있습니다. 그것은 우리가 스크레이핑 하려고 했던 페이지에 사실은 테이블이 3개 있었기 때문입니다. 우리가 관심을 가지고 있는 큰 테이블 말고도, 아래에서 보는 것처럼, ‘일러두기’ 부분 역시 테이블로 되어 있습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pics/retrieval/to_tell.png" class="img-fluid figure-img"></p>
+<p><img src="pics/retrieval/to_tell.png" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption class="figure-caption">일러두기 테이블</figcaption>
 </figure>
 </div>

@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R의 기초</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manipulate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">크라우드펀딩 빅데이터 불러오기, 분석 가능한 형태로 만들기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -241,14 +241,14 @@ ul.task-list li input[type="checkbox"] {
 <p>다음은, 데이터 저널리즘이 대중화되는데 선구적인 역할을 한 미국 언론사 FiveThirtyEight의 <a href="https://fivethirtyeight.com/features/how-the-best-nba-teams-juggle-their-lineups/">스포츠 보도 사례</a>입니다. 스포츠 보도야 말로, 데이터 저널리즘의 힘을 제대로 느낄 수 있는 분야 중 하나죠. 첫번째 그림은 이미 미국프로농구(NBA)의 레전드라고 할 수 있는 르브론 제임스(LeBron James)와 엔소니 데이비스(Anthony Davis)라는 선수가 20-21시즌 LA레이커스에서 29경기(y축) 각 48분(x축) 동안 언제 함께 뛰었고, 언제 혼자 뛰었는지를 시각화한 것입니다. 짙은 파란색은 두 선수가 같이 뛴 시간, 하늘색은 앤소니 데이비스, 분홍색은 르브론 제임스가 혼자 뛴 시간 입니다. 회색은 두 선수 모두 뛰지 않은 시간이라고 하네요. 언뜻 보아도알 수 있듯이, 생각보다 한 경기 안에서 두 명의 스타가 같이 뛰는 시간이 많지 않았습니다. 기사에 따르면, 실제로 레이커스는 전략적인 이유로 두 선수를 번갈아 기용하는 이른바 ’로테이션’을 운용할 필요가 있었다고 하네요.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/five_lakers.png" class="img-fluid figure-img"></p>
+<p><img src="img/five_lakers.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption class="figure-caption">LA레이커스: 르브론 제임스와 앤소니 데이비스의 출장 시간</figcaption>
 </figure>
 </div>
 <p>다음 그림은 NBA의 또 다른 레전드, 스테픈 커리(Stephen Curry)와 드레이먼드 그린(Draymond Green)이 골든스테이트 워리어스에서 경기중 언제 함께 뛰고 언제 따로 뛰었는지를 시각화한 것입니다. LA 레이커스와는 한 눈에 보아도 확연한 차이를 느낄 수 있지요? 워리어스의 두 선수는 뛰면 함께 뛰고, 안 뛸 때는 같이 빠지고 있네요.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/five_golden.png" class="img-fluid figure-img"></p>
+<p><img src="img/five_golden.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption class="figure-caption">글든스테이트 워리어스: 스테픈 커리와 드레이먼드 그린의 출장 시간</figcaption>
 </figure>
 </div>
@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <p>다음 사례는 KBS의 손흥민 선수에 대한 보도입니다. 축구에 큰 관심이 있지 않았던 분들도 손흥민 선수에 대한 보도에서 ’기대득점’이라는 용어를 사용하는 것을 들어보셨을 것입니다. 예컨대, 손흥민 선수가 골을 자주 넣는 ’손흥민존’에서 기대득점이 예를들면 0.03에 불과했는데도 불구하고 골을 넣었다, 그런 식의 보도 말이죠. 그런데, ’기대득점’이 뭘까요? 사실 이건 위에서 이야기한 스포츠 빅데이터와 관련이 있습니다. 이제 워낙 많은 실시간 데이터가 쌓이다 보니, 어떤 선수가, 경기 중 어떤 시점에, 어떤 위치에서, 어떤 팀을 상대로 슛을 시도했을 때 골이 들어갈 확률이 몇%다, 이런 예측을 통계 모형을 통해 할 수가 있게 되었습니다. 즉, 앞서의 시나리오에서라면, 손흥민 선수가 골을 넣은 곳이 과거 데이터에 따른 예측 모형에 따르면 100번 슛을 해야 고작 3번 골이 들어갈 수 있는 지점이었는데, 그럼에도 골을 넣었다는 것이죠. 더 간단히 말해, 어지간 하면 골을 넣지 못할 상황에서 골을 넣었으니, 손흥민 선수가 대단하다, 그런 의미인 것이지요.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/kbs_son.png" class="img-fluid figure-img"></p>
+<p><img src="img/kbs_son.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption class="figure-caption">손흥민 기대득점</figcaption>
 </figure>
 </div>
@@ -318,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
 <p>마부작침 팀의 분석은 보도에 그치지 않았습니다. 제대로 감시 받지 않는 기초의원들의 회의비 지출도 문제지만, 사실 이는 지역 맛집을 알아내기 위한 매우 양질으 데이터이기도 합니다. 요즘 인터넷에서 찾을 수 있는 음식점 리뷰들은 도움이 될 때도 있지만, 젊은 사람들의 취향만을 반영하거나, 해당 서비스의 이용이 적은 지역에서는 정보의양이 적거나, 또는 음식점에서 리뷰 작성에 개입해 신뢰성이 떨어지는 경우도 많죠? 아마 숨겨져 있느 지역 맛집에 관해서 기초의원들의 회의비 지출 영수증 보다 양질의 빅데이터는 찾기 어려울 것입니다. 마부작침 팀은 이에 착안했는지, 자신이 위치한 지역 기초의원들이 가장 많이 회의비를 지출한 식당을 찾아내는 <a href="https://mabu.newscloud.sbs.co.kr/upchubi/">웹서비스</a>를 제공했습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/sbs_restaurants2.png" class="img-fluid figure-img"></p>
+<p><img src="img/sbs_restaurants2.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption class="figure-caption">새로움 전략의 예</figcaption>
 </figure>
 </div>
@@ -348,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
 <p>다섯번째는 <strong><em>예측</em></strong> 전략 입니다. 예측은 과거에 일어난 일을 잘 분석하여 추세, 또는 여러 수치들이 만들어 내는 패턴을 파악해 미래를 예측하는 것입니다. 예측에 대해서는 아까 손흥민 선수의 ’기대득점’에 대해 이야기 하면서 언급했습니다. 전통적인 보도에서는 투자 전문가의 주식/부동산 가격 예측, 경제학 교수의 금리 변동 예상, 유명한 컨설팅 회사의 기술 예측 등, ’전문가 의견’을 이용하는 것이 흔히 이루어지는 예측 보도였지요. 이러한 보도들은 유용한 것도 있었지만, 사실 그 인용된 전문가의 의견이라는 것이 검증이 된 경우도 그렇지 않은 경우도 많았습니다. 또, 경제나 기술 발전에 대한 예측은 예측 모형의 복잡도도 매우 높을 뿐더러, 여전히 그 정확도가 매우 떨어집니다. 반대로 데이터 사이언티스트들이 비교적 쉽게 스스로 예측 모형을 구축할 수 있고, 그 정확도도 비교적 높은 영역이 바로 스포츠 영역 입니다. 그 때문에 최근 스포츠 보도에서는 선수의 행동 데이터와 예측 모형에 기반한 다음과 같은 예측에 기반한 보도들이 자주 이루어지고 있습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/expected.png" class="img-fluid figure-img"></p>
+<p><img src="img/expected.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <figcaption class="figure-caption">예측 전략의 예.</figcaption>
 </figure>
 </div>

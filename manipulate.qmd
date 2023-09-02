@@ -1,4 +1,4 @@
-# 크라우드펀딩 빅데이터 불러오기, 분석 가능한 형태로 만들기
+# 빅데이터를 분석 가능하게
 
 ## Tidyverse를 이용해 크라우드펀딩 빅데이터 로드하기
 
@@ -26,7 +26,7 @@ kaggle에 가입을 완료하고, 약관 승인 절차들을 거치고 나면, �
 
 압축을 해제해 압축 파일 안에 있는 6개의 `csv` 파일을 여러분이 앞으로 사용할 프로젝트(잊지 않으셨죠?) 폴더 안에 `data`라는 폴더를 하나 만들고 그 안에 옮겨놓습니다. 다음 그림처럼요.
 
-![데이터 저장](pics/manipulate/data_folder.png)
+![데이터 저장](pics/manipulate/data_folder.png){width=60%}
 
 이제 데이터를 부를 준비가 되었습니다.
 
@@ -238,7 +238,7 @@ right <- data.frame(Key=c(1,2,4),
 
 각 테이블은 출력해보면 알겠지만, 두 테이블은 다음과 같이 생겼습니다.
 
-![Left-Right 테이블](pics/manipulate/Left_Right.png)
+![Left-Right 테이블](pics/manipulate/Left_Right.png){width=80%}
 
 테이블 이름이 left, right인 이유는 앞으로 작성할 코드에서 left 테이블을 먼저, 즉, 왼쪽에 써주고, right 테이블을 나중에, 즉, 오른쪽에 써 줄 것이기 때문입니다.
 
