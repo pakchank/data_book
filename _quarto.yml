@@ -4,7 +4,7 @@ project:
 lang: ko-KR
 
 book:
-  title: "지역 언론인을 위한 R기반 데이터 저널리즘"  
+  title: "공부하는 언론인을 위한 R기반 데이터 저널리즘"  
   author: "박찬경"
   date: "6/26/2023"
   chapters:

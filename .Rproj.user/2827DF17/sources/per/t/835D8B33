@@ -3,7 +3,7 @@
     "path": "C:/Users/user/Dropbox/2023 Spring/Book/visualize.qmd",
     "project_path": "visualize.qmd",
     "type": "quarto_markdown",
-    "hash": "1714668060",
+    "hash": "3901635533",
     "contents": "",
     "dirty": false,
     "created": 1687077887877.0,
@@ -18,15 +18,15 @@
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
         "cursorPosition": "191,0",
-        "scrollLine": "0",
+        "scrollLine": "276",
         "rmdVisualModeLocation": "8724:7026"
     },
     "folds": "",
-    "lastKnownWriteTime": 1693019028,
+    "lastKnownWriteTime": 1693381869,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1693019028940,
+    "last_content_update": 1693546755742,
     "read_only": false,
     "read_only_alternatives": []
 }
