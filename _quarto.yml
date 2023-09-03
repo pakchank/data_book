@@ -5,12 +5,12 @@ lang: ko-KR
 
 book:
   title: "공부하는 언론인을 위한 R기반 데이터 저널리즘"  
-  author: "박찬경"
-  date: "6/26/2023"
+  author: "박찬경·사영준"
+  date: "9/3/2023"
   chapters:
     - index.qmd
     - journalism.qmd
-    - ds.qmd
+    #- ds.qmd
     #- intro.qmd
     - install.qmd
     - basic.qmd
@@ -31,11 +31,13 @@ format:
   html:
     theme: superhero
   pdf:
-    documentclass: scrbook
+    documentclass: report
     #fontfamily: Batang
     include-in-header:
       - text: 
           \usepackage{layouts}
+          \usepackage{setspace}
+          \onehalfspacing
 
 editor: visual
 

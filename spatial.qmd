@@ -20,9 +20,11 @@ library(raster)
 #library(gpclib)
 #library(maptools)
 #library(lubridate)
+library(extrafont)
+font_import()
     
 #Sys.getlocale()
-Sys.setlocale("LC_ALL","C") # 강제 언어 삭제
+#Sys.setlocale("LC_ALL","C") # 강제 언어 삭제
 Sys.setlocale("LC_ALL","Korean") # 언어 다시 한글로
 ```
 
@@ -109,7 +111,7 @@ ymds <- 202101:202112
 
 이제 두 개의 벡터에 대해 반복을 해야 합니다. 앞에서는 하나의 벡터에 대해서만 반복을 했는데, 두 개에 대해서는 어떻게 반복을 해야 할까요? 방법은 간단합니다. 반복문 안에 반복문이 있으면 됩니다. 다음과 같이 말이죠.
 
-```{r}
+```{r, eval=FALSE}
 datalist <- list()   # 데이터를 차례차례 입력할 빈 리스트 생성
 counter <- 1         # 리스트 안의 위치를 지정해주기 위한 카운터
 for (cd in cds){
@@ -127,7 +129,7 @@ for (cd in cds){
 
 이제 '테이블들의 리스트'인 `datalist`에 들어있는 모든 테이블을 하나의 테이블로 합쳐줍니다.
 
-```{r}
+```{r, eval=FALSE}
 dtApt <- bind_rows(datalist)
 ```
 
@@ -137,8 +139,8 @@ dtApt <- bind_rows(datalist)
 #write_csv(dtApt, "dtApt.csv")
 ```
 
-```{r, eval=FALSE}
-#dtApt <- read_csv("dtApt.csv")
+```{r}
+dtApt <- read_csv("dtApt.csv")
 ```
 
 ## 아파트 실거래가 (시각화)
@@ -165,7 +167,7 @@ aggApt <- dtApt %>%
 
 이제 시간에 따른 평균 매매 가격 변화를 지역별로 시각화해 보겠습니다.
 
-```{r}
+```{r, warning=FALSE}
 aggApt %>%
     ggplot(aes(월, avgP, color=district)) +
     geom_line() +
@@ -175,7 +177,7 @@ aggApt %>%
 
 이를 조금 더 보기좋게 수정한 코드는 다음과 같습니다.
 
-```{r}
+```{r, warning=FALSE}
 aggApt %>%
     ggplot(aes(as.integer(월), avgP, color=district)) +
     geom_line() +
@@ -254,7 +256,7 @@ daegu %>%
 
 이제 지도상에 구별 연간 아파트 매매가격 평균이 표현되었습니다. 그런데 지도가 아직 너무 단순해 어떤 정보를 담고 있는지 분명치 않아 보입니다. 이해가 쉽도록 정보를 조금 더해보겠습니다. 그리고 매매 가격이 하락한 지역과 상승한 지역이 모두 푸른 색으로 표현되니 상승과 하락의 대비가 분명치 않습니다. 따라서 `scale_fill_gradient2()` 함수를 이용해 상승을 푸른 색으로, 하락을 붉은 색으로 표현해 보겠습니다.
 
-```{r}
+```{r, warning=FALSE}
 daegu %>%
     left_join(growth, by="district") %>%
     ggplot() +

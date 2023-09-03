@@ -21,7 +21,7 @@
 
 전주의적 속성에는 방향, 길이, 너비, 크기, 형태, 곡률, 표시추가, 둘러싸기, 색상, 색조, 위치 공간적 그룹핑 등이 있습니다. 우리는 이를 이용해서 독자가 바로 알아차리고 주목했으면 하는 영상 정보를 강조할 수 있는 것이지요. 즉, 주목을 원하는 정보를 강조하기 위해 전주의적 속성을 이용할 수 있습니다.
 
-**아래 그림 이용해서 별도로 그림 그리기**
+![전주의적 속성](pics/story/preattentive_attributes.png)
 
 https://goingslowly.tistory.com/entry/%EB%8D%94-%EB%82%98%EC%9D%80-%EC%8B%9C%EA%B0%81%ED%99%94%EB%A5%BC-%EC%9C%84%ED%95%B4-%EC%95%8C%EC%95%84%EC%95%BC%ED%95%A0-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%8B%9C%EA%B0%81%ED%99%94%EC%9D%98-%EC%A0%84%EC%A3%BC%EC%9D%98%EC%A0%81-%EC%86%8D%EC%84%B1
 
@@ -50,11 +50,11 @@ https://kimhaksung.tistory.com/entry/gestalt
 
 유사하게 '유사성의 법칙(Law of Similarity)', '연속성의 법칙(Law of Continuity)' 같은 것들도 있습니다. 즉, 모양이 비슷한 것, 연속적으로 이어져 있는 것을 통해 인간의 관계를 자연스럽게 인식한다는 것입니다. 
 
-**그림: 유사성, 연속성**
+![유사성과 연속성](pics/story/similarity_continuity.png)
 
 '폐쇄성의 법칙(Law of Closure)' 같은 것도 흥미롭습니다. 아래의 예를 보면, 사람은 삼각형이 명확하게 그려져 있지 않아도 이중 삼각형 구조를 이해할 수 있습니다. 인간의 뇌가 완성되어 있지 않은 폐쇄 구조를 알아서 완성하기 때문이지요. 
 
-**그림: 폐쇄성**
+![폐쇄성](pics/story/closure.png)
 
 이러한 게슈탈트 법칙을 어떤 사람들의 '형상 인지의 경제 법칙'이라고 표현하기도 합니다. 즉, 인간이 한정된 인지 자원과 정보를 가지고도 '효율적으로', 많은 인지자원을 쓰지 않고 형상을 인지할 수 있게 해 주는 시스템 같은 것을 가지고 있다는 이야기지요. 그렇다면, 우리는 인간이 자연스럽게 받아 들일 수 있는 형상의 인지 능력을 어느 정도 믿고, 그러한 능력을 보완해주기 위한 부가 정보는 과감하게 생략해도 좋겠지요. 이제 시각화에서 그러한 예를 한 번 보도록 하겠습니다. 
 
@@ -217,7 +217,7 @@ projects |>
     scale_x_continuous(breaks=2002:2014, labels=2002:2014) + 
     scale_colour_economist(labels=c("하와이", "뉴욕")) +
     theme_economist() +
-    ggtitle("donorschoose.org 연도별 평균 목표액액")
+    ggtitle("donorschoose.org 연도별 평균 목표액")
 ```
 한글이 섞여있어 익숙하게 보일지 모르겠습니다만, 이 테마는 영국의 유명한 주간지 <The Economist>가 사용하는 테마입니다. 유사하게 `theme_wsj()`, `scale_colour_wsj()` 함수를 이용해 <월스트리트저널>의 테마를 이용하는 것도 가능합니다. 
 
