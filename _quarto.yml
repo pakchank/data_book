@@ -41,7 +41,7 @@ format:
 
 editor: visual
 
-mainfont: Batang
-sansfont: Batang
-monofont: Batang
+#mainfont: Batang
+#sansfont: Batang
+#monofont: Batang
 

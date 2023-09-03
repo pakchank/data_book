@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-KR" xml:lang="ko-KR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="박찬경·사영준">
+
+<title>공부하는 언론인을 위한 R기반 데이터 저널리즘</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./journalism.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "일치 없음",
+    "search-matching-documents-text": "일치된 문서",
+    "search-copy-link-title": "검색 링크 복사",
+    "search-hide-matches-text": "추가 검색 결과 숨기기",
+    "search-more-match-text": "추가 검색결과",
+    "search-more-matches-text": "추가 검색결과",
+    "search-clear-button-title": "제거",
+    "search-detached-cancel-button-title": "취소",
+    "search-submit-button-title": "검색"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">서문</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">공부하는 언론인을 위한 R기반 데이터 저널리즘</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="검색"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">서문</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">데이터 저널리즘이란</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manipulate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summarise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">데이터 요약하기 (= 분석하기)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualize.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">데이터 시각화</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./retrieval.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">데이터 수집하기</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./story.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">데이터 스토리텔링</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./story2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">심화: 웹프로그래밍을 응용한 데이터 스토리텔링</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./spatial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">심화: 공간정보를 이용한 분석</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">부록: R과 Rstudio 설치하기</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#서문" id="toc-서문" class="nav-link active" data-scroll-target="#서문">서문</a>
+  <ul class="collapse">
+  <li><a href="#to-dos" id="toc-to-dos" class="nav-link" data-scroll-target="#to-dos">To-do’s</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">공부하는 언론인을 위한 R기반 데이터 저널리즘</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">저자</div>
+    <div class="quarto-title-meta-contents">
+             <p>박찬경·사영준 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">공개</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023년 9월 3일</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="서문" class="level1 unnumbered">
+<h1 class="unnumbered">서문</h1>
+<p>저널리즘이 위기라는 이야기가 들려온지 벌써 십수년이 지났습니다. 그간 언론은 디지털 전환, 수용자 컨텐츠 발굴 등 여러 혁신을 시도해 보았지만, 많은 시도들이 인터넷의 정보 유통 구조 변화를 쫓는 방식으로 귀결되면서, 미디어가 새로운 자생력을 얻는데 이르지 못하고, 플랫폼 기업들에게 수익 구조를 내맡겨야 하는 결과를 피하지 못했습니다. 그 때문에 해외의 많은 언론사들은 최근 미디어의 본질인 독보적인 콘텐츠의 생산과 이를 통한 독자적인 수익 구조를 추구하는 방식으로 회귀하는 경향을 보이고 있습니다.</p>
+<p>독자적 수익을 창출할 수 있는 독보적 컨텐츠의 생산. 이것은 산업으로서의 저널리즘의 본질이면서도, 어쩌면 그간 이어온 한국의 미디어 혁신에서 가장 간과되었던 것들 중 하나입니다. 누구나 취재와 출판, 유통이 가능한 시대에 독보적 컨텐츠는 어떻게 가능하고, 보도의 전문성은 어떻게 확보될 수 있을까요? 데이터 저널리즘은 그 대답 중 하나 입니다. 큰 자본력과 언론 조직을 보유하고 있는 리거시 미디어 뿐만 아니라, 미디어 스타트업, 지역 언론사, 제3세계 언론사, 그리고 탐사 저널리즘 등 다양한 유형의 언론사들이 스스로 표방하는 저널리즘의 가치를 성취하기 위한 방법으로 데이터 저널리즘을 채택하고 있습니다. 데이터 저널리즘 접근은 대중들이 접근할 수 없는 사실을 발굴하여 특종을 내기보다는 이미 접근 가능한 대량의 데이터들을 연결하고 분석하고, 전달하는 과정을 통해 새로운 통찰을 전달하려고 합니다.</p>
+<p>문제는 데이터 저널리즘은 기자, 언론사에게 새로운 전문성을 요구한다는 것입니다. 매일 발로 뛰면서 집요하게 진실을 추적하는 전통적인 기자에게 요구되는 덕목과 자질과 달리, 데이터 저널리즘은 책상 앞에서 앉아 데이터들을 발굴하고, 그 안에서 숨어있는 메시지를 찾아내는 능력을 요구합니다. 속보 경쟁을 해야하는 언론인들 대부분에게 이러한 전문성을 발휘하는 것도, 그리고 그러한 전문성을 새로이 습득하기 위한 학습 과정도 사치처럼 여겨질 가능성이 큽니다..</p>
+<p>본 교재는 극심한 취재와 보도 경쟁에 내몰려 있지만, 위기에 빠진 언론의 다음 단계를 모색하는, 공부하는 기자들을 위한 데이터저널리즘 교재 입니다. 본 교재는 데이터 저널리즘에 경험이 없는 언론인들이 가능한 짬을 내어 독학하는 상황을 가정하여 만들었습니다. 따라서 본 교재는 다음과 같은 특징을 가지고 만들어졌습니다.</p>
+<ul>
+<li><p>첫째, 온라인으로 만들어 누구나 쉽게 접근할 수 있도록 하였습니다.</p></li>
+<li><p>둘째, 실제 보도 상황에 근접한 빅데이터, API를 통해 획득한 비정형 데이터를 이용한 데이터 분석을 바로 시작할 수 있는 예제를 최대한 반영하였습니다.</p></li>
+<li><p>셋째, 오픈소스 프로그래밍 언어인 R을 이용하였습니다. 최대한의 유연성을 제공하는 컴퓨터 언어이면서도 무료이고, 간단한 문법을 가지고 있는 데이터 저널리즘 산업의 표준적인 언어 중 하나입니다.</p></li>
+<li><p>넷째, 데이터의 분석에만 초점을 맞추지 않았습니다. 데이터 저널리즘의 필요성, 전통적 저널리즘과의 차별성에 주목하였고, 데이터 스토리텔링의 관점에서 필요한 몇 가지 영상 심리학 이론, 시각화 기법등을 구현하는 법에 대해서도 이야기하였습니다. 그리고 배포까지 염두에 두어 바로 웹페이지를 생산할 수 있는 컴퓨팅 환경을 기본으로 사용합니다.</p></li>
+</ul>
+<p>그렇다고 해서, 이 교재는 완전히 문외한인 언론인만을 위한 것은 아닙니다. 다양한 학습 경험이 있는 언론인들이 유연성 있게 활용할 수 있도록 하기 위해, 각 챕터를 난이도 별로 구분해서 작성하고자 노력했습니다. 이를 최대한 활용하기 위해, 다음과 같은 수준별 학습 방법을 권합니다.</p>
+<ul>
+<li><p>R또는 프로그래밍이 완전히 처음인 독자: 부록 install 부터.</p></li>
+<li><p>R을 접해 보았고 프로그래밍에 대한 초보적인 사전지식이 있으나 거의 활용해보지 않은 독자: 부록을 건너뛰고 처음부터</p></li>
+<li><p>R을 활용해 본 경험이 있는 독자: install을 건너뛸 것.</p></li>
+<li><p>프로그래밍 경험이 있으나, 데이터 저널리즘에 적용하는 방식에 대해 궁금한 독자: data science, journalism, data storytelling 부분</p></li>
+</ul>
+<p>그간 데이터 저널리즘에 대한 지식은 여기저기 흩어져 있어, 학습을 원하는 독자들은 조각난 지식들을 모으는데에서 부터 시작해야 했고, 따라서 학습을 포기하기 일수였습니다. 인터넷 언론 &lt;뉴스타파&gt;에서 지난 2022년 <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=297325074">좋은 교재</a>를 발간하였으나, 정보공개 청구 등 데이터 수집을 통한 탐사 저널리즘 맥락에 초점을 두고 있다는 점, 파이썬이라는 훌륭하지만 비교적 비전공자에게 접근성이 떨어지는 프로그램 언어를 사용했다는 점, 데이터 스토리텔링, 뉴스 배포 등의 보도 밖의 중요 측면에 관심을 덜 두었다는 점에서 다소 아쉬운 점도 있었습니다. 교재의 부족 문제는 해외의 경우에도 크게 다르지 않아, 취재와 보도라는 특수한 맥락 보다는 프로그래밍의 측면에 주목한 한 두개의 교재 이외에는 데이터 저널리즘 전체 과정을 포괄하는 교재가 없어, 교수자가 필요에 따라 여러 정보를 짜깁기 해야 하는 상황이 반복되었습니다. 이러한 아쉬움을 달래보고자, 본 교재는 가능한 데이터 저널리즘의 이론, 필요성, 데이터 스토리텔링 전략과 관련된 영상 심리학과 그 구현, 데이터 저널리즘 기반 보도와 뉴스 유통을 원활하게 하기위한 문서 작성과 관리 전략까지 다양한 분야를 최대한 광범위하게 다루기 위해 노력했습니다.</p>
+<p>또 하나 이 교재의 중요한 특징은 오픈 텍스트북을 지향한다는 것입니다. 오픈 텍스트북을 위한 첫 삽은 이 교재의 저자인 박찬경과 사영준이 뜨지만, 오픈 사이언스의 도구들을 이용해 누구든 이 교재를 무료로 사용할 수 있을 뿐만 아니라, 이를 수정, 재편집, 재구성하여 본인만의 교재를 다시 구성할 수 있도록 하고자 했습니다. 이를 위해 이 교재는 마크다운(Markdown) 문법을 이용해 작성되었으며, 모든 소스코드는 <a href="https://github.com/pakchank/data_book">Github 저장소</a>에 공개되었습니다. 따라서 이 교재는 완성본이 아닙니다. 앞으로 언론사, 언론인재교육 기관, 학계와의 협력을 통해 계속해서 진화하는 교재의 기반으로 사용될 수 있기를 기대합니다.</p>
+<p>이 교재는 지난 2년간 경북대학교와 언론재단에서 미디어 커뮤니케이션 전공 대학생들과 현직 기자들을 대상으로 이루어진 강의를 바탕으로 쓰여졌습니다. 강의의 내용을 교재로 구성하고 오픈소스 프로젝트로 변환할 수 있도록 도움을 준 한국언론재단 대구지사 조윤태 지사장, 이민규 과장께 가장 먼저 감사드립니다. 또한 교재를 완성하는 과정에서 세세한 사항에 신경써 준 경북대학교 고서영, 이신애 학생에게 감사드립니다. 특히 고서영 학생은 이 교재에 포함된 많은 삽화들을 고생스럽게 그려주었습니다.</p>
+<p>이 교재가 짧게는 데이터 저널리즘 교육에서 교재 가뭄을 해소하는데 일조하고, 길게는 더 많은, 더 좋은 교재의 바탕이 되기를 바랍니다. 그리고 무엇보다 데이터 저널리즘이 특정 전공자들만 다룰 수 있는 특수한 영역이 아니라, 조금의 노력만 기울이면 누구나 접근할 수 있는 시도라는 인식이 확산되는데 일조할 수 있기를 기대합니다.</p>
+<section id="to-dos" class="level2">
+<h2 class="anchored" data-anchor-id="to-dos">To-do’s</h2>
+<ul>
+<li>개인정보 지우기</li>
+<li>챕터명 확정 후 서문 재수정</li>
+<li>그래픽 리사이징.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "복사완료!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "복사완료!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./journalism.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">데이터 저널리즘이란</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
