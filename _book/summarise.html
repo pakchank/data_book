@@ -152,14 +152,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
+  <a href="./basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -216,6 +216,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">부록: R과 Rstudio 설치하기</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">부록: 본문에 사용된 분석 코드</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -226,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#summarise" id="toc-summarise" class="nav-link active" data-scroll-target="#summarise"><span class="header-section-number">7.1</span> summarise</a></li>
+  <li><a href="#summarise" id="toc-summarise" class="nav-link active" data-scroll-target="#summarise"><span class="header-section-number">7.1</span> summarise()</a></li>
   <li><a href="#그룹별-요약" id="toc-그룹별-요약" class="nav-link" data-scroll-target="#그룹별-요약"><span class="header-section-number">7.2</span> 그룹별 요약</a></li>
   <li><a href="#날짜-정보를-이용한-그룹별-요약" id="toc-날짜-정보를-이용한-그룹별-요약" class="nav-link" data-scroll-target="#날짜-정보를-이용한-그룹별-요약"><span class="header-section-number">7.3</span> 날짜 정보를 이용한 그룹별 요약</a></li>
   </ul>
@@ -262,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>projects <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/projects.csv"</span>)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="summarise" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="summarise"><span class="header-section-number">7.1</span> summarise</h2>
+<h2 data-number="7.1" class="anchored" data-anchor-id="summarise"><span class="header-section-number">7.1</span> summarise()</h2>
 <p><code>tidyverse</code> 문법에서 데이터를 요약할 때에는 그게 어떤 방식의 요약이든간에, 요약을 한다고 선언해 주어야 합니다. 그 선언은 간단하게 <code>summarise()</code>라는 함수를 사용하면 됩니다. 그리고 그 함수 안에 ‘어느 변수를’ ‘어떤 방식으로’ 요약할 것인지만 써주면 됩니다.</p>
 <p>바로 다음과 같이 말이지요.</p>
 <div class="cell">
@@ -503,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # i 445 more rows</code></pre>
 </div>
 </div>
-<p>이렇게 다양한 방식으로 요약한 결과를 그래프로 표현하면, 그것이 바로 시각화 입니다. 드디어 시각화를 배울 준비가 되었습니다.</p>
+<p>이렇게 다양한 방식으로 요약한 결과를 그래프로 표현하면, 그것이 바로 시각화 입니다. 드디어 여러분은 데이터 시각화를 이용할 준비가 되었습니다.</p>
 
 
 </section>

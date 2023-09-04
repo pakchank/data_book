@@ -5,7 +5,7 @@ lang: ko-KR
 
 book:
   title: "공부하는 언론인을 위한 R기반 데이터 저널리즘"  
-  author: "박찬경·사영준"
+  author: "박찬경(경북대학교)·사영준(서강대학교)"
   date: "9/3/2023"
   chapters:
     - index.qmd
@@ -13,8 +13,8 @@ book:
     #- ds.qmd
     #- intro.qmd
     - install.qmd
-    - basic.qmd
     - quarto.qmd
+    - basic.qmd
     - tidy.qmd
     - manipulate.qmd
     - summarise.qmd
@@ -24,6 +24,7 @@ book:
     - story2.qmd
     - spatial.qmd
     - appendix-install.qmd
+    - appendix-code.qmd
 
 #bibliography: references.bib
 

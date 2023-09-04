@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>공부하는 언론인을 위한 R기반 데이터 저널리즘 - 3&nbsp; R 프로그래밍 기초</title>
+<title>공부하는 언론인을 위한 R기반 데이터 저널리즘 - 4&nbsp; R 프로그래밍 기초</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./quarto.html" rel="next">
-<link href="./install.html" rel="prev">
+<link href="./tidy.html" rel="next">
+<link href="./quarto.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
@@ -152,14 +152,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basic.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
+  <a href="./basic.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -216,6 +216,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">부록: R과 Rstudio 설치하기</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">부록: 본문에 사용된 분석 코드</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -226,21 +232,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#변수-함수-할당" id="toc-변수-함수-할당" class="nav-link active" data-scroll-target="#변수-함수-할당"><span class="header-section-number">3.1</span> 변수, 함수, 할당</a></li>
-  <li><a href="#데이터의-타입과-구조" id="toc-데이터의-타입과-구조" class="nav-link" data-scroll-target="#데이터의-타입과-구조"><span class="header-section-number">3.2</span> 데이터의 타입과 구조</a>
+  <li><a href="#변수-함수-할당" id="toc-변수-함수-할당" class="nav-link active" data-scroll-target="#변수-함수-할당"><span class="header-section-number">4.1</span> 변수, 함수, 할당</a></li>
+  <li><a href="#데이터의-타입과-구조" id="toc-데이터의-타입과-구조" class="nav-link" data-scroll-target="#데이터의-타입과-구조"><span class="header-section-number">4.2</span> 데이터의 타입과 구조</a>
   <ul class="collapse">
-  <li><a href="#데이터-타입" id="toc-데이터-타입" class="nav-link" data-scroll-target="#데이터-타입"><span class="header-section-number">3.2.1</span> 데이터 타입</a></li>
-  <li><a href="#데이터-구조" id="toc-데이터-구조" class="nav-link" data-scroll-target="#데이터-구조"><span class="header-section-number">3.2.2</span> 데이터 구조</a></li>
-  <li><a href="#리스트list" id="toc-리스트list" class="nav-link" data-scroll-target="#리스트list"><span class="header-section-number">3.2.3</span> (2) 리스트(list)</a></li>
-  <li><a href="#데이터프레임data-frame" id="toc-데이터프레임data-frame" class="nav-link" data-scroll-target="#데이터프레임data-frame"><span class="header-section-number">3.2.4</span> (3) 데이터프레임(Data Frame)</a></li>
+  <li><a href="#데이터-타입" id="toc-데이터-타입" class="nav-link" data-scroll-target="#데이터-타입"><span class="header-section-number">4.2.1</span> 데이터 타입</a></li>
+  <li><a href="#데이터-구조" id="toc-데이터-구조" class="nav-link" data-scroll-target="#데이터-구조"><span class="header-section-number">4.2.2</span> 데이터 구조</a></li>
+  <li><a href="#리스트list" id="toc-리스트list" class="nav-link" data-scroll-target="#리스트list"><span class="header-section-number">4.2.3</span> (2) 리스트(list)</a></li>
+  <li><a href="#데이터프레임data-frame" id="toc-데이터프레임data-frame" class="nav-link" data-scroll-target="#데이터프레임data-frame"><span class="header-section-number">4.2.4</span> (3) 데이터프레임(Data Frame)</a></li>
   </ul></li>
-  <li><a href="#서브세트subset" id="toc-서브세트subset" class="nav-link" data-scroll-target="#서브세트subset"><span class="header-section-number">3.3</span> 서브세트(Subset)</a>
+  <li><a href="#서브세트subset" id="toc-서브세트subset" class="nav-link" data-scroll-target="#서브세트subset"><span class="header-section-number">4.3</span> 서브세트(Subset)</a>
   <ul class="collapse">
-  <li><a href="#벡터" id="toc-벡터" class="nav-link" data-scroll-target="#벡터"><span class="header-section-number">3.3.1</span> 벡터</a></li>
-  <li><a href="#리스트" id="toc-리스트" class="nav-link" data-scroll-target="#리스트"><span class="header-section-number">3.3.2</span> 리스트</a></li>
-  <li><a href="#데이터프레임" id="toc-데이터프레임" class="nav-link" data-scroll-target="#데이터프레임"><span class="header-section-number">3.3.3</span> 데이터프레임</a></li>
+  <li><a href="#벡터" id="toc-벡터" class="nav-link" data-scroll-target="#벡터"><span class="header-section-number">4.3.1</span> 벡터</a></li>
+  <li><a href="#리스트" id="toc-리스트" class="nav-link" data-scroll-target="#리스트"><span class="header-section-number">4.3.2</span> 리스트</a></li>
+  <li><a href="#데이터프레임" id="toc-데이터프레임" class="nav-link" data-scroll-target="#데이터프레임"><span class="header-section-number">4.3.3</span> 데이터프레임</a></li>
   </ul></li>
-  <li><a href="#조건predicate" id="toc-조건predicate" class="nav-link" data-scroll-target="#조건predicate"><span class="header-section-number">3.4</span> 조건(Predicate)</a></li>
+  <li><a href="#조건predicate" id="toc-조건predicate" class="nav-link" data-scroll-target="#조건predicate"><span class="header-section-number">4.4</span> 조건(Predicate)</a></li>
   </ul>
 </nav>
     </div>
@@ -249,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></h1>
 </div>
 
 
@@ -267,10 +273,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>이제 여러분들은 R을 사용해 기사를 작성할 기본적인 준비가 되었습니다. 그러면 이제 R을 배워 보아야겠지요? 이 장에서는 여러분들이 R 뿐만 아니라, 이전에 프로그래밍을 접한 적인 없었다는 것을 전제하고 R의 기초 문법, 그 중에서 앞으로 본 교재 내용을 학습하는데 최소한으로 필요한 만큼만을 설명하려고 합니다. <strong>만약 여러분이 프로그래밍이나 R에 대한 기초적인 지식이 있다면, 이 장을 읽지 않거나, 아니면 빠르게 훑어보기만 해도 다음 장부터 나오는 내용을 이해하는데 큰 문제가 없을 것입니다.</strong></p>
 <p>프로그래밍에 익숙지 않은 분들은 컴퓨터 언어를 새로 배워야 한다는 것이 대단히 부담스러울 수도 있지만, 사실 R의 문법은 그 어떤 프로그래밍 언어보다도 일반인들에게 직관적이고, 심하게 이야기하면 약간 복잡한 계산기를 다루는 느낌이라고 생각하셨도 좋습니다. 여기서는 R을 적어도 계산기처럼 사용할 수 있도록 해 주는 기초 문법들을 몇 가지 배울 것입니다. 사실 우리는 <code>R</code> 문법 그 자체를 깊게 배우지는 않을 것인데요, 곧 <code>tidyverse</code>라는 일종의 <em>대체문법</em>을 이용할 것이기 때문이죠. <code>tidyverse</code>는 여러가지 이용의 편리함 때문에, <code>R</code>의 원래 문법을 사실상 대체한 표준처럼 되어 버렸기 때문에, <code>R</code> 고유의 문법을 깊이 배우지 않는다고 하더라도 너무 걱정할 필요는 없습니다.</p>
 <p>그러나, 아무리 우리가 <code>tidyverse</code> 문법을 사용할 것이라고 하더라도 여전히 <code>R</code>을 사용하는 것은 변함이 없기에 몇 가지 기초 문법은 익숙하게 알고 있어야 합니다. 다행이도, 그 종류가 많지는 않습니다.</p>
-<section id="변수-함수-할당" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="변수-함수-할당"><span class="header-section-number">3.1</span> 변수, 함수, 할당</h2>
+<section id="변수-함수-할당" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="변수-함수-할당"><span class="header-section-number">4.1</span> 변수, 함수, 할당</h2>
 <p>R의 작동 방식을 이해하기 위해서, 먼저 컴퓨터가 작동하는 방식에 대해서 간단하게만 복습해 봅시다. 컴퓨터에 데이터를 저장되는 곳은 크게 세 군데가 있습니다.</p>
+<blockquote class="blockquote">
 <p>연산장치(CPU, GPU) - 메모리 - 저장장치(HDD, SSD)</p>
+</blockquote>
 <p>이는 ’악마의 두뇌’를 가졌다고 일컬어지기도 하는 저 유명한 수학자 존 폰 노이만(John von Neumann; 1903-1957)이 고안해 낸 컴퓨터의 구조입니다. 아직 소개하지 않았지만, 여러분이 사용할 데이터들은 HDD, SSD와 같은 저장 장치에 살고 있습니다. 파일을 저장한다는 행위는 여러분들도 익숙하실 것이라고 믿습니다. 하지만, 여러분들이 데이터를 이용해서 어떤 계산을 하고 싶다면, 그 계산은 저장 장치가 아니라 ’연산장치’에서 일어납니다. CPU도 아마 많이 들어보셨을테고, 최근 인공신경망(ANN)이나, 암호화폐 채굴이 CPU 대신 GPU라는 연산장치 위에서 돌아간다는 이야기도 들어보셨을 것입니다. CPU건, GPU건, 컴퓨팅이라는 것은 결국 그 ’연산장치’들이 어떤 계산을 해 주기를 바라는 것이지요.</p>
 <p>문제는 저장장치에 있는 데이터를 연산장치가 바로 사용하는 것이 아니라는 것입니다. 연산장치가 계산을 하기 위해서는 중간 단계에 해당하는 메모리 위에 값이 기록되어야 합니다. 그리고 아마도 여러분들이 알고 계실 것처럼, 메모리에 기록된 데이터는 휘발합니다. 즉, 컴퓨터 전원이 꺼지면 없어지는 것이죠. 이 때문에 저장장치들이 필요합니다.</p>
 <p>그런데, 메모리에 대해서는 전원이 꺼지면 데이터가 휘발된다는 것 말고도꼭 알아야 하는 것이 있습니다. 메모리 위에 기록된 값은 <em>’이름’이 없으면 존재하지 않는 것이나 다름 없다</em>는 사실입니다. 이게 무슨 말인지 알기 위해 다음과 같은 예를 살펴 봅시다.</p>
@@ -345,11 +353,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>getwd()</code>라는 함수가 working directory 즉, 현재 <code>R</code>이 작업을 하고 있는 컴퓨터의 경로를 표시하는 동작을 의미하니, 인수가 따로 필요하지는 않겠지요. 어떤 경우에는 함수가 인수를 필요로 하지만 (즉, 타동사 이지만), 인수를 쓰지 않아도 작동하는 경우가 있습니다. 그런 경우에는 함수가 자신이 필요로 하는 인수에 대해 디폴트 값을 가지고 있는 경우 입니다. 즉, 사용자가 아무 인수도 주지 않으면 자동으로 인수로 가정하는 값이 있는 경우도 있다는 것입니다. 우리가 “밥 먹어”하는 대신 상대방이 알아들을만 한 상황에서는 “먹어”라고 하는 것과 비슷한 이치입니다.</p>
 </section>
-<section id="데이터의-타입과-구조" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="데이터의-타입과-구조"><span class="header-section-number">3.2</span> 데이터의 타입과 구조</h2>
+<section id="데이터의-타입과-구조" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="데이터의-타입과-구조"><span class="header-section-number">4.2</span> 데이터의 타입과 구조</h2>
 <p><code>R</code>은 여러가지 종류의 데이터를 다룰 수 있습니다. 하지만 컴퓨터 프로그램은 인간처럼 연산을 하면서 주어진 데이터가 숫자인지, 문자인지 직관적으로 결정할 능력을 가지고 있지 않습니다. 연산이 이루어지기 전에 해당 데이터가 숫자인지, 문자인지, 미리 정해놓아야 합니다. 이렇게 정해 놓은 데이터의 종류를 데이터의 타입(Type)이라고 합니다. 그와는 달리, 타입을 가지고 있는 복수의 값을 엮어 놓는 방식도 여러가지가 있습니다. 우리는 그 다양한 방식들을 데이터의 구조(Structure)라고 부를 것입니다. 데이터의 타입과 구조는 매우 많은 종류가 있고, 심지어 이용자가 만들어낼 수도 있는데, 여기서는 일반적인 데이터 분석 및 시각화를 위해 자주 사용하게 되는 것만 짚고 넘어가려고 합니다.</p>
-<section id="데이터-타입" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="데이터-타입"><span class="header-section-number">3.2.1</span> 데이터 타입</h3>
+<section id="데이터-타입" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="데이터-타입"><span class="header-section-number">4.2.1</span> 데이터 타입</h3>
 <ul>
 <li><code>numeric</code>: 1, 1.2, -3.42와 같이, 우리가 일상생활에서 사용하는 <em>실수</em>의 개념에 가깝습니다.</li>
 <li><code>character</code>: 이는 문자를 의미합니다. “a”, “b”, “3-2”와 같이 따옴표로 둘러싸 문자를 표현합니다. 사람의 눈에는 숫자이더라도 “1”라고 쓰면 R은 이를 문자로 인식합니다. 따라서 <code>"1"-"2"</code>와 같은 명령어를 치면 에러가 발생합니다.</li>
@@ -364,8 +372,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>정수를 뜻하는 <code>integer</code>, 복소수를 뜻하는 <code>complex</code> 타입도 있지만 당장 다룰 일이 별로 없을 것이므로, 건너뛰도록 하겠습니다. 또 하나 중요한 데이터 타입으로는 <code>factor</code>라는 것이 있는데요, 이것은 바로 이해가 어려우니, 나중에 사용할 때 설명하도록 하겠습니다.</p>
 </section>
-<section id="데이터-구조" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="데이터-구조"><span class="header-section-number">3.2.2</span> 데이터 구조</h3>
+<section id="데이터-구조" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="데이터-구조"><span class="header-section-number">4.2.2</span> 데이터 구조</h3>
 <p><code>R</code>의 특이한 점 중 하나는 한 개의 값이 따로 존재한다는 개념이 없다는 것입니다. 이상하게 들리겠지만, 일단 이해를 위해 다음과 같은 예를 보도록 하죠.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -374,9 +382,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>콘솔에서 2라고 치고 엔터를 누르면, <code>R</code>은 이 값을 그대로 반복해서 보여주는데요, 그 옆에 <code>[1]</code>이라고 쓰여져 있는 것이 보일 것입니다. 그것은 <code>2</code>가 값들을 모아놓은 <em>집합</em>의 첫번째 <em>요소</em>라는 뜻입니다. 우리에게는 그냥 하나의 숫자 같지만, <code>R</code>은 여러개의 값을 담을 수 있는 <em>그릇</em>이 있는데, 그 안에 들어있는 값이 하필이면 한 개 였고, 그 한 개의 값이 첫번째 요소이니(물론 마지막 요소이기도 합니다) <code>[1]</code>이라고 표시한 것입니다. 이렇게 <code>R</code>은 항상 모든 값이 여러개의 값을 가질 수 있는 <em>그릇</em>에 담겨있다고 생각하고, 그릇이 없는 값 같은 것은 존재하지 않는다고 봅니다. 이렇게 값들을 담을 수 있는 그릇을 <em>데이터 구조(structure)</em>라고 부릅니다.</p>
-<p><em>그릇 그림</em></p>
-<section id="벡터vector" class="level4" data-number="3.2.2.1">
-<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="벡터vector"><span class="header-section-number">3.2.2.1</span> (1) 벡터(vector)</h4>
+<section id="벡터vector" class="level4" data-number="4.2.2.1">
+<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="벡터vector"><span class="header-section-number">4.2.2.1</span> (1) 벡터(vector)</h4>
 <p><code>R</code>이 사용하는 가장 간단한 데이터 구조는 벡터 입니다. 벡터는 같은 데이터 타입을 가진 값들의 순서가 있는 집합이라고 생각하면 좋습니다. 사실 위에서 본 <code>[1] 2</code>라는 출력 값은 “2라는 값 하나만 가지고 있는 벡터”라는 뜻입니다. 이제 여러개의 값이 담겨 있는 벡터를 보겠습니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vecNum <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
@@ -395,8 +402,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>위에서 보듯 <code>c()</code>라는 함수를 이용해서 여러 개의 값을 만들 수 있습니다. 또 값을 변수에 <em>할당</em>하는데 사용했던 <code>&lt;-</code> 연산자를 이용해 벡터 전체를 하나의 변수에 할당할 수도 있습니다. 위의 예에서 <code>vecNum</code>은 <code>numeric</code> 데이터 타입만을 가지고 있는 벡터이지만, <code>vecChar</code>의 경우에는 <code>character</code> 타입으로만 이루어진 벡터입니다.</p>
 </section>
 </section>
-<section id="리스트list" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="리스트list"><span class="header-section-number">3.2.3</span> (2) 리스트(list)</h3>
+<section id="리스트list" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="리스트list"><span class="header-section-number">4.2.3</span> (2) 리스트(list)</h3>
 <p>리스트는 ‘키(key)’라고 불리는 데이터의 이름과 그에 상응하는 ’값(value)’ 사이의 연결로 표현되는 데이터 구조 입니다. 이렇게 말하면 조금 난해하지만, 예를 보면 간단합니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>persons <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
@@ -423,8 +430,8 @@ $height
 </div>
 <p>위의 예에서 바로 알 수 있듯이 <code>$</code> 연산자는 리스트에서 특정 키에 해당하는 값을 부르기 위한 역할을 합니다. 당장은 리스트 보다 벡터를 자주 사용하게 되겠지만, 곧 리스트가 유용한 경우가 자주 발생하게 됩니다.</p>
 </section>
-<section id="데이터프레임data-frame" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="데이터프레임data-frame"><span class="header-section-number">3.2.4</span> (3) 데이터프레임(Data Frame)</h3>
+<section id="데이터프레임data-frame" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="데이터프레임data-frame"><span class="header-section-number">4.2.4</span> (3) 데이터프레임(Data Frame)</h3>
 <p>데이터 프레임은 우리가 잘 알고 있는 표(table)를 의미합니다. 예컨대 위에서 사용한 리스트의 예를 데이터 프레임으로 만들어 볼까요?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
@@ -441,11 +448,11 @@ $height
 <p>우리에게 익숙한 테이블 모양으로 출력이 된다는 것을 알 수 있습니다. 예컨대 데이터로 엑셀 파일이 있어 이를 <code>R</code>을 이용해 분석하려 한다면, 이렇게 데이터프레임으로 인식시키는 것이 가장 직관적이겠지요. 데이터 프레임은 여러분들이 가장 자주 보게 될 데이터 구조 입니다.</p>
 </section>
 </section>
-<section id="서브세트subset" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="서브세트subset"><span class="header-section-number">3.3</span> 서브세트(Subset)</h2>
+<section id="서브세트subset" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="서브세트subset"><span class="header-section-number">4.3</span> 서브세트(Subset)</h2>
 <p>앞서 리스트에 대해 이야기 하면서 <code>$</code> 연산자를 통해 데이터의 일부만 보는 작업의 예를 보았습니다. 이렇게 데이터의 일부만 보는 행위를 서브세트라고 합니다. 서브세트를 분석 목적에 맞게 잘 하는 것은 데이터 과학에서 가장 중요하고, 자주 하게 되는 테크닉 입니다. 우리는 여기서 배우는 서브세트 기술 보다 조금 더 명료한 방법을 앞으로 사용하게 되겠지만, 이를 100% 피해갈 수는 없으므로, 가장 기초적인 것만 보도록 하겠습니다.</p>
-<section id="벡터" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="벡터"><span class="header-section-number">3.3.1</span> 벡터</h3>
+<section id="벡터" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="벡터"><span class="header-section-number">4.3.1</span> 벡터</h3>
 <p>일단 벡터의 서브세트를 이해하기 위해 다음과 같은 예를 보겠습니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>)</span>
@@ -469,8 +476,8 @@ $height
 </div>
 </div>
 </section>
-<section id="리스트" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="리스트"><span class="header-section-number">3.3.2</span> 리스트</h3>
+<section id="리스트" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="리스트"><span class="header-section-number">4.3.2</span> 리스트</h3>
 <p>이번엔 아까 썼던 것과 같은 리스트 예를 사용해 보겠습니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>persons <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
@@ -501,8 +508,8 @@ $height
 </div>
 <p>결과에서 보는 것처럼, <code>persons[[2]]</code>는 <code>persons</code>라는 <code>list</code>의 두번째 키/값의 쌍에서 값만 되돌려달라는 의미입니다. 따라서 되돌려받는 값은 값에 해당하는 벡터, <code>c("Male", "Female", "Female")</code>이 됩니다. 반면, <code>persons[2]</code>는 두 번째 키/값의 쌍 전체를 돌려달라는 돌려달라는 의미이므로, 반환값 역시 리스트인 <code>list(gender = c("Male", "Female", "Female"))</code> 형태가 됩니다. 따라서, <code>persons[2:3]</code>과 같은 표현도 자연스럽게 정의가 되겠지요.</p>
 </section>
-<section id="데이터프레임" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="데이터프레임"><span class="header-section-number">3.3.3</span> 데이터프레임</h3>
+<section id="데이터프레임" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="데이터프레임"><span class="header-section-number">4.3.3</span> 데이터프레임</h3>
 <p>사실 여러분은 데이터프레임을 서브세트 할 일이 가장 많을 것입니다. 사실 데이터프레임을 서브세트 하는 방식은 리스트와 매우 유사합니다. 아까 만든 <code>df</code> 데이터프레임을 생각해 보면,</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>gender</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -549,8 +556,8 @@ $height
 <p>이것 말고도 서브세팅에 이용할 수 있는 기술은 몇 가지 더 있는데요, 우리는 사실 이 방식을 사용하지 않을 예정입니다. 왜냐하면, 이렇게 <code>R</code>이 기본적으로 제공하는 방식은 가독성이 그리 좋지 않아, 몇 일만 지나도 내가 무엇을 하려고 했던 것인지 잊어버리는 경우가 많습니다. 예컨대, 위의 예에서 첫번째, 세번째 열이 무엇이었는지 기억하는 사람은 별로 없겠지요. 또 내가 스스로 쓴 코드를 이해하기 어렵다는 것은 다른 사람이 이해하기는 더 어렵다는 뜻입니다. 이는 협업을 자주 해야 하는 데이터 저널리즘에서는 치명적인 문제라고 할 수 있습니다. 따라서 우리는 다음 장에서 가독성과 협업 효율성이 높은 다른 방식을 이용할 것입니다.</p>
 </section>
 </section>
-<section id="조건predicate" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="조건predicate"><span class="header-section-number">3.4</span> 조건(Predicate)</h2>
+<section id="조건predicate" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="조건predicate"><span class="header-section-number">4.4</span> 조건(Predicate)</h2>
 <p>여기서 말하는 조건은 쉽게 말하면 <em>질문</em> 입니다. 코딩을 하다보면 질문을 할 일이 정말 많은데요, 특히 우리가 자주 사용하는 조건(Predicate)을 이용한 질문들은 그 대답이 <code>logical</code> 값, 즉, <code>TRUE</code> 또는 <code>FALSE</code>가 됩니다. <code>R</code>에게 참, 거짓을 물어보는 방식은 아주 많은데요, 그 중 아주 많이 사용하는 것들로는 다음과 같은 것들이 있습니다.</p>
 <blockquote class="blockquote">
 <p><code>==</code>, <code>!=</code>, <code>%in%</code>, <code>is.na()</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code></p>
@@ -851,13 +858,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./install.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></span>
+      <a href="./quarto.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./quarto.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tidy.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

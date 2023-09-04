@@ -10,18 +10,13 @@
 install.packages("rater", "maptools", "rgeos")
 ```
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(httr)
 library(jsonlite)
-#library(xml2)
 library(raster)
-#library(ggmap)
-#library(gpclib)
-#library(maptools)
-#library(lubridate)
 library(extrafont)
-font_import()
+#font_import()
     
 #Sys.getlocale()
 #Sys.setlocale("LC_ALL","C") # 강제 언어 삭제
@@ -41,7 +36,7 @@ dtJSON <- httr::content(res, as = "text", encoding="UTF-8")
 data <- fromJSON(dtJSON)
 df <- data$response$body$items$item
 
-df
+#df
 ```
 
 처리 결과에서 볼 수 있는 것처럼 해당 데이터는 2015년 12월(`DEAL_YMD=201512`) 서울 종로구에서 이루어진(`LAWD_CD=11110`) 아파트 매매 자료를 포함하고 있습니다. 대단히 흥미로운 자료이지만, 결정적인 문제가 있습니다. 해당 데이터는 종로구라는 한정된 공간에 대한 데이터를 2015년12월이라는 아주 짧은 기간에 관해서만 제공하고 있다는 것이 바로 그점입니다.

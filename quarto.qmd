@@ -24,13 +24,13 @@ getwd()
 
 새 프로젝트를 만드는 방법은 간단합니다. `Rstudio`의 `File` 메뉴를 선택해보세요. 그러면 드롭다운 메뉴에서 `New Proejct`라는 기능을 찾을 수 있습니다. 이를 누르면, 다음과 같은 화면이 등장할 것입니다.
 
-![새 프로젝트](pics/install/Newproject_NewProejct.png){width=80%}
+![새 프로젝트](pics/install/Newproject_NewProejct.png){width="80%"}
 
 여기서 프로젝트 명은 새로 만들어질 폴더의 이름이고, 경로는 그 폴더가 만들어질 상위 폴더라고 생각하시면 됩니다. 예컨대 위의 예에서, 저는 `Spring2023` 폴더 아래 `Book`이라는 새로운 폴더를 만들어 바로 그 폴더를 프로젝트 폴더로 사용하려는 것이지요.
 
 `OK`를 누르고 나면, 몇 초에 걸쳐 프로젝터(=폴더)가 만들어집니다. 프로젝트가 폴더에 불과하다는 것을 확인하기 위해서 해당 폴더를 찾아보지요. 저는 지금 윈도우를 이용하고 있기 때문에 탐색기를 이용하겠습니다.
 
-![폴더에서 프로젝트 찾기](pics/install/NewProject_Folder.png){width=70%}
+![폴더에서 프로젝트 찾기](pics/install/NewProject_Folder.png){width="70%"}
 
 새로 폴더가 하나 만들어져 있지요? 그 안에는 `Book.Rproj`라는 파일도 자동으로 만들어져 있는데, 이 파일은 단지 이 폴더가 그냥 폴더가 아니고 `R`을 이용한 프로젝트를 수행하기 위한 폴더임을 표시하는 것입니다. 이것은 조금 있다가 서로 다른 폴더 사이를 이동할 때 이용할 것입니다. 자, 이제 우리는 이제 책을 쓰기 위해서는 이 폴더만 사용하게 될 것입니다. 새로 작성한 코드도, 사용할 데이터도 이 폴더 안에 모두 저장하는 것이지요.
 
@@ -38,7 +38,7 @@ getwd()
 
 그런데 이미 복수의 프로젝트를 가지고 있었다면, 프로젝트 사이는 어떻게 왔다갔다 할 수 있을까요? 간단합니다. 다시 `File` 메뉴를 선택해 보세요. 그러면 `Open Project`라는 기능이 있을 것입니다. 이것을 선택하면, 일반 탐색기처럼 폴더를 선택할 수 있습니다. 만약 `Research`라는 프로젝트로 이동하고 싶다고 해당 프로젝트 폴더를 찾아가면 됩니다. `Research` 프로젝트가 이미 만들어져 있었다면 해당 폴더에는 `Research.Rproj`라는 파일이 저장되어 있겠지요. 그 파일을 선택한 후, `OK`를 누르면 이제 `Rstudio`는 `Research` 프로젝트로 이동합니다. 이제 저는 연구를 하는 것입니다.
 
-![새로운 프로젝트로 이동](pics/install/Research.png){width=70%}
+![새로운 프로젝트로 이동](pics/install/Research.png){width="70%"}
 
 그런데, 사실 이렇게 복잡한 방식으로 프로젝트 사이를 이동하는 경우는 많지 않습니다. 더 간단한 방법이 있거든요. 아까 이용한 `Open Project` 메뉴 아래에는 `Recent Projects`라는 메뉴도 있습니다. 그 위에 마우스 포인트를 올리면 최근에 이용한 프로젝트의 목록이 나타납니다. 그 목록 중 내가 이동하고 싶은 프로젝트를 클릭하면, 아주 간단하게 프로젝트 사이를 이동할 수 있습니다.
 
@@ -54,13 +54,13 @@ getwd()
 
 노트북 환경을 이용하는 방법은 여러가지가 있지만, 우리는 "Quarto Document"라는 가장 표준적인 방법을 사용할 것입니다. "Quarto Document"를 사용하려면 새로운 "Quarto Document" 파일을 하나 만들어주면 됩니다. `Rstudio` 상단의 `File` 메뉴에서 `New File`이라고 되어 있는 곳에 마우스 커서를 올려보세요, 그러면 오른쪽에 떠오르는 메뉴에 "Quarto Document"라는 항목이 있을 것입니다. 이를 클릭하면 다음과 같은 창이 떠오릅니다.
 
-![Quarto Document 만들기](pics/quarto/quarto%20documentation.png){width=70%}
+![Quarto Document 만들기](pics/quarto/quarto%20documentation.png){width="70%"}
 
 여기서 지시하는대로 문서의 제목, 작성자(Author)의 이름 등을 입력하세요. 그러면, 파일 하나가 생성됩니다.
 
 그 다음 Visual이라고 되어 있는 모드를 Source로 바꿔주세요. (Visual 모드를 사용해도 되지만, 우리는 Source 모드를 이용하겠습니다.)
 
-![Source 모드로 전환](pics/quarto/visual_to_source.png){width=80%}
+![Source 모드로 전환](pics/quarto/visual_to_source.png){width="80%"}
 
 마지막으로 해당 파일을 저장해 주세요. 'File' 메뉴에서 'Save'를 클릭한 후, 파일명을 정해주면 됩니다. 확장자는 `qmd`가 됩니다.
 
