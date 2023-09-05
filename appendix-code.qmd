@@ -9,7 +9,7 @@ library(jsonlite)
 library(ggtext)
 library(glue)
 library(raster)
-library(extrafont)
+#library(extrafont)
 library(ggthemes)
 
 options(scipen=9999)
@@ -33,7 +33,7 @@ projects |>
     summarise(avg_size = mean(total_price_excluding_optional_support))
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 projects |> 
     mutate(year = year(date_posted)) |>
     group_by(school_state, year) |>
@@ -51,7 +51,7 @@ projects |>
 ```
 
 ## Facet 계층과 색상을 동시에 이용한 다차원 시각화
-```{r}
+```{r, warning=FALSE}
 projects |>
     mutate(optional = total_price_including_optional_support - total_price_excluding_optional_support) |>
     filter(total_price_excluding_optional_support < 1000 & students_reached < 500) |>
@@ -65,8 +65,8 @@ projects |>
 ```
 
 ## 두 개 이상의 테이블을 결합한 시각화
-```{r}
-yearly_goals <-projects |>
+```{r, warning=FALSE}
+yearly_goals <- projects |>
     mutate(year_posted = year(date_posted)) |>
     group_by(year_posted) |>
     summarise(total_goal = sum(total_price_excluding_optional_support))
@@ -233,7 +233,7 @@ aggApt %>%
     theme(legend.position = "none")
 ```
 
-```{r}
+```{r, warning=FALSE}
 korea <- getData('GADM', country='kor', level=2)
 daegu_gadm <- korea[korea$NAME_1 == 'Daegu', ]
 daegu <- fortify(daegu_gadm, region="NL_NAME_2")

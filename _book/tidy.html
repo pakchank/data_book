@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>공부하는 언론인을 위한 R기반 데이터 저널리즘 - 5&nbsp; Tidyverse의 이해</title>
+<title>공부하는 언론인을 위한 R기반 데이터 저널리즘 - 6&nbsp; Tidyverse의 이해</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tidy.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tidy.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
@@ -146,80 +146,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./appendix-journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">부록: 데이터 저널리즘 사례와 코드 링크</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tidy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manipulate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summarise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">데이터 요약하기 (= 분석하기)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">데이터 요약하기 (= 분석하기)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visualize.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">데이터 시각화</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">데이터 시각화</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./retrieval.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">데이터 수집하기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">데이터 수집하기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./story.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">데이터 스토리텔링</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">데이터 스토리텔링</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./story2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">심화: 웹프로그래밍을 응용한 데이터 스토리텔링</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">심화: 웹프로그래밍을 응용한 데이터 스토리텔링</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./spatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">심화: 공간정보를 이용한 분석</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">심화: 공간정보를 이용한 분석</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">부록: R과 Rstudio 설치하기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">부록: R과 Rstudio 설치하기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">부록: 본문에 사용된 분석 코드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">부록: 본문에 사용된 분석 코드</span></span></a>
   </div>
 </li>
     </ul>
@@ -232,15 +238,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#패키지-개념-이해하기" id="toc-패키지-개념-이해하기" class="nav-link active" data-scroll-target="#패키지-개념-이해하기"><span class="header-section-number">5.1</span> 패키지 개념 이해하기</a>
+  <li><a href="#패키지-개념-이해하기" id="toc-패키지-개념-이해하기" class="nav-link active" data-scroll-target="#패키지-개념-이해하기"><span class="header-section-number">6.1</span> 패키지 개념 이해하기</a>
   <ul class="collapse">
-  <li><a href="#패키지-사용시-주의사항-설치-로드" id="toc-패키지-사용시-주의사항-설치-로드" class="nav-link" data-scroll-target="#패키지-사용시-주의사항-설치-로드"><span class="header-section-number">5.1.1</span> 패키지 사용시 주의사항: 설치? 로드?</a></li>
+  <li><a href="#패키지-사용시-주의사항-설치-로드" id="toc-패키지-사용시-주의사항-설치-로드" class="nav-link" data-scroll-target="#패키지-사용시-주의사항-설치-로드"><span class="header-section-number">6.1.1</span> 패키지 사용시 주의사항: 설치? 로드?</a></li>
   </ul></li>
-  <li><a href="#tidyverse-처음-사용하기" id="toc-tidyverse-처음-사용하기" class="nav-link" data-scroll-target="#tidyverse-처음-사용하기"><span class="header-section-number">5.2</span> Tidyverse 처음 사용하기</a>
+  <li><a href="#tidyverse-처음-사용하기" id="toc-tidyverse-처음-사용하기" class="nav-link" data-scroll-target="#tidyverse-처음-사용하기"><span class="header-section-number">6.2</span> Tidyverse 처음 사용하기</a>
   <ul class="collapse">
-  <li><a href="#서브세트" id="toc-서브세트" class="nav-link" data-scroll-target="#서브세트"><span class="header-section-number">5.2.1</span> 서브세트</a></li>
-  <li><a href="#파이프" id="toc-파이프" class="nav-link" data-scroll-target="#파이프"><span class="header-section-number">5.2.2</span> 파이프</a></li>
-  <li><a href="#서브세트와-파이프를-동시에" id="toc-서브세트와-파이프를-동시에" class="nav-link" data-scroll-target="#서브세트와-파이프를-동시에"><span class="header-section-number">5.2.3</span> (3) 서브세트와 파이프를 동시에!</a></li>
+  <li><a href="#서브세트" id="toc-서브세트" class="nav-link" data-scroll-target="#서브세트"><span class="header-section-number">6.2.1</span> 서브세트</a></li>
+  <li><a href="#파이프" id="toc-파이프" class="nav-link" data-scroll-target="#파이프"><span class="header-section-number">6.2.2</span> 파이프</a></li>
+  <li><a href="#서브세트와-파이프를-동시에" id="toc-서브세트와-파이프를-동시에" class="nav-link" data-scroll-target="#서브세트와-파이프를-동시에"><span class="header-section-number">6.2.3</span> (3) 서브세트와 파이프를 동시에!</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -250,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></h1>
 </div>
 
 
@@ -267,8 +273,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>앞서 <code>R</code>이 기본적으로 제공하는 간단한 문법을 배워보았는데요, 그러면서도 앞으로 해당 기본 문법보다는 일종의 ‘대체 문법’을 사용할 것이라는 언급을 여러번 했습니다. 그 대체문법이 이 장에서 배울 “Tidyverse” 문법 입니다. 사실 “Tidyverse”가 대체문법이라고 하는 데에는 좀 어폐가 있습니다. “Tidyverse” 문법을 따른다고 하더라도, <code>R</code>이 가지고 있는 변수, 함수, 데이터 타입, 데이터 구조 등이 ’거의’ 그대로 사용되기 때문입니다. 다만, 세브세팅이나, 새로운 변수의 생성, 긴 코드의 작성을 편하고 일관되며, 가독성 있게 만들기 위해서 도입된 일종의 코딩 ‘스타일’ 또는 ‘패러다임’ 이라고 부르는 것이 더 나을지도 모르겠습니다.</p>
 <p>하지만, 그러한 ’스타일’을 위해서는 <code>R</code>이 기본적으로 제공하지 않는 몇 가지 함수가 필요합니다. <code>R</code>이 기본적으로 제공하지 않는다면, 어떻게 한다는 것일까요? 이를 위해서 우리는 ’패키지’라는 개념부터 알아야 합니다.</p>
-<section id="패키지-개념-이해하기" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="패키지-개념-이해하기"><span class="header-section-number">5.1</span> 패키지 개념 이해하기</h2>
+<section id="패키지-개념-이해하기" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="패키지-개념-이해하기"><span class="header-section-number">6.1</span> 패키지 개념 이해하기</h2>
 <p><code>R</code>뿐만 아니라, 많은 다른 언어에서 ’패키지’라고 하는 것은 쉽게 말하자면 유용한 함수들의 묶음을 의미합니다. 기본 <code>R</code>을 설계한 사람들이 <code>R</code>에 내장해두지는 않았지만, 특정 목적을 위해서는 유용함 도구들이 묶여서 ’패키지’로 제공된다고 생각하면 되겠습니다. 비유하자면, 여러분들이 매일 사용하는 ’카카오톡’이 <code>R</code>이라고 해 보죠. 카카오톡 안에는 기본적인 채팅 기능 안에도 수많은 다른 기능들이 있지요? 선물을 주고 받을 수도 있고, 음식을 주문할 수도 있고, 쇼핑을 할 수도 있습니다. 물론 모든 이용자들이 이 기능들을 모두 사용하지는 않지요. 하지만, 어떤 사람들은 자주 사용합니다. 이러한 세부 기능에 해당 하는 일종의 카카오톡 안의 ’미니 프로그램’을 <code>R</code>에서는 패키지라고 부른다고 생각하면 되겠습니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -297,8 +303,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>이 함수를 실행시키면 <code>tidyverse</code> 문법을 사용할 준비가 된 것입니다.</p>
-<section id="패키지-사용시-주의사항-설치-로드" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="패키지-사용시-주의사항-설치-로드"><span class="header-section-number">5.1.1</span> 패키지 사용시 주의사항: 설치? 로드?</h3>
+<section id="패키지-사용시-주의사항-설치-로드" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="패키지-사용시-주의사항-설치-로드"><span class="header-section-number">6.1.1</span> 패키지 사용시 주의사항: 설치? 로드?</h3>
 <p>방금 <code>tidyverse</code> 패키지를 설치하고 불러왔는데요, 여기서 패키지를 ’설치’한다는 것과 ’불러온다’는 것의 의미에 대해 잠깐 생각해볼 필요가 있습니다.</p>
 <p>여러분이 일상적으로 윈도우 또는 맥OS 상에서 어떤 소프트웨어를 ‘설치’하면 그것은 어디에 저장되었다는 것을 의미하나요? 당연히 HDD, SSD와 같은 ’저장장치’ 입니다. 그래야, 컴퓨터를 껐다 다시 키더라도, 다시 ’설치’할 필요가 없을테니까요. <code>tidyverse</code> 패키지를 설치했다는 것도 비슷한 의미입니다. 설치한 패키지는 저장장치 어디엔가 저장되어 있습니다.</p>
 <blockquote class="blockquote">
@@ -312,8 +318,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>또 한 가지, 여러분들에게 당장 자주 일어나지는 않을 일이지만, 여러 개의 패키지를 로드해서 사용하다보면 간혹 생기는 문제가 있습니다. 바로 다른 두 개의 패키지가 하나의 함수명을 공유하고 있는 경우 입니다. 예컨대, <code>MASS</code>라는 패키지에도 <code>select()</code>라는 함수가 있고, <code>tidyverse</code> 패키지에도 <code>select()</code> 함수가 있습니다. 기능도, 문법도 완전히 다르지요. 따라서, 후자를 생각하고 <code>select()</code> 함수를 썼다가 에러가 발생하는 경우가 있습니다. 여러 방법이 있지만, 이럴 때에는 <code>tidyverse::select()</code>라고 써 주세요. 그러면, <code>tidyverse</code> 패키지에 속하는 <code>select()</code> 함수를 사용하게 됩니다.</p>
 </section>
 </section>
-<section id="tidyverse-처음-사용하기" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="tidyverse-처음-사용하기"><span class="header-section-number">5.2</span> Tidyverse 처음 사용하기</h2>
+<section id="tidyverse-처음-사용하기" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="tidyverse-처음-사용하기"><span class="header-section-number">6.2</span> Tidyverse 처음 사용하기</h2>
 <p>이제 겨우 <code>tidyverse</code> 문법을 사용할 준비가 되었습니다. 물론 <code>tidyverse</code> 패키지의 설치와 불러오기를 잊지 마세요! 사실 <code>tidyverse</code>는 많은 다양한 코딩 방식, 시각화 방식, 데이터 타입과 구조에 대한 재정의 등을 포함한 광범위한 코딩 패러다임인데요, 우리는 학습 목적상 다음 두 가지에만 주목하려고 합니다.</p>
 <ol type="1">
 <li>서브세트</li>
@@ -321,8 +327,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>그 외에 <code>tidyverse</code>의 다른 요소들은 학습이 심화되면서 차차 마주하게 될 것입니다.</p>
 <p>첫번째, 서브세트는 우리가 앞장에서 이미 보았던 서브세트, 즉, 데이터의 일부만을 취하는 방법입니다. <code>R</code>은 이미 좋은 서브세트 기능을 제공하지만, 앞서 말했듯 해당 문법이 가독성이 아주 좋지는 않다고 했습니다. 따라서 <code>tidyverse</code>에서 제공하는 방식의 서브세트를 이용할 것입니다. 두번째 ’파이프’는 긴 코드를 연결해서 간결하게 작성하는데 필요한 일종의 코드 작성법 입니다. 차례차례 살펴보지요.</p>
-<section id="서브세트" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="서브세트"><span class="header-section-number">5.2.1</span> 서브세트</h3>
+<section id="서브세트" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="서브세트"><span class="header-section-number">6.2.1</span> 서브세트</h3>
 <p><code>tidyverse</code>의 서브세트는 기본적으로 <code>R</code> 데이터구조 중 데이터프레임에 적용되는 것입니다. 벡터나 리스트를 사용할 때에는 기본 <code>R</code> 문법을 사용하면 됩니다. 데이터프레임을 서브세트 하는 방법에는 행을 취하는 방법과 열을 취하는 방법이 있었습니다. 다음을 기억해 두세요. <code>tidyverse</code>에서는:</p>
 <ol type="1">
 <li>열을 취할 때에는 항상 <code>select()</code>함수와 열의 ’이름’을 사용합니다.</li>
@@ -396,8 +402,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>이것은 여성’이거나(OR)’ 키가 170 이상인 사람에 해당하는 행을 돌려달라는 것이겠지요? 이는 데이터 전체에 해당하네요.</p>
 </section>
-<section id="파이프" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="파이프"><span class="header-section-number">5.2.2</span> 파이프</h3>
+<section id="파이프" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="파이프"><span class="header-section-number">6.2.2</span> 파이프</h3>
 <p>파이프는 코드를 길게 써야 할 때 필요한 사용하는 코딩 스타일 입니다. 파이프를 위해서는 ’파이프’로 불리는 기호가 하나 필요합니다. 바로 다음 기호 입니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -432,8 +438,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>이 코드를 잘 보면 항상 파이프 왼쪽에서 발생한 결과가 다음 함수의 투입값(input)이 됩니다. 이 코드는 우리가 글을 읽는 방식과 동일한 순서에 따라 쓰여졌기 때문에 읽기 쉬울 뿐더러, 필요 없는 중간 단계의 데이터(<code>data2</code>, <code>data3</code> 따위)도 만들지 않았습니다. 우리는 앞으로 연속해서 함수를 적용해야 할 때, 위의 예와 같이 파이프를 사용할 것입니다. 여러분도 가능한 위의 코딩 스타일을 사용하도록 노력해 보세요!</p>
 </section>
-<section id="서브세트와-파이프를-동시에" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="서브세트와-파이프를-동시에"><span class="header-section-number">5.2.3</span> (3) 서브세트와 파이프를 동시에!</h3>
+<section id="서브세트와-파이프를-동시에" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="서브세트와-파이프를-동시에"><span class="header-section-number">6.2.3</span> (3) 서브세트와 파이프를 동시에!</h3>
 <p>이제 <code>tidyverse</code> 문법의 주요 구성 요소라고 말한 서스세트와 파이프를 결합해 보겠습니다. 이제 앞서 사용했던 예에서 특정 열을 선택하고, 또 어떤 조건에 따라 행도 선택한다고 해 보지요. 그러면 다음과 같이 쓸 수 있을 것입니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
@@ -695,12 +701,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./basic.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./manipulate.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

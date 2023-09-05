@@ -118,7 +118,7 @@ projects |>
 
 ggplot2의 좋은 점 중 하나는 이렇게 그래프의 세부사항을 수정하는 작업 역시 지금까지 해왔던 것과 같이 계층(layer)을 쌓는 방식으로 일관되게 할 수 있다는 점입니다. 에를들어 그래프 타이틀 변경은 `labs()`라는 함수를 새로운 계층으로 변경해서 수행합니다.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 projects |> 
     mutate(year = year(date_posted)) |>
     group_by(school_state, year) |>
@@ -135,7 +135,7 @@ projects |>
 
 그 외의 다른 옵션을 추가한 그래프도 볼까요?
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 projects |> 
     mutate(year = year(date_posted)) |>
     group_by(school_state, year) |>
@@ -177,9 +177,9 @@ projects |>
 -   `scale_..._...()` 계층: ggplot2 내부 변수(x, y, color, fill 등)가 그래프로 표현되는 방식을 바꾸어 줌. 단, 함수명은 때에 따라 바뀜. `scale_..._...()`에서 첫번째 `...`에는 내부 변수명이, 두번째 `...`에는 해당 변수의 타입이 들어감. 즉, `scale_x_contiuous()`는 연속형은 x변수의 그래프 표현을 바꾸어주기 위한 계층을 생성하는 함수.
 -   `theme()` 계층: 내부 변수의 표현과 무관한 그 외 미적 요소를 변경하는 역할을 함.
 
-한 가지만 더 첨언하자면, `theme()`을 어떻게 수정할 것인지 고민할 필요 없이 ggplot2가 미리 제공하는 테마 중 하나를 그냥 선택해도 좋습니다. 다음과 같이요.
+한 가지만 더 첨언하자면, `theme()`을 어떻게 수정할 것인지 고민할 필요 없이 ggplot2가 미리 제공하는 테마 중 하나를 그냥 선택해도 좋습니다. 다음과 같이 말이죠.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 projects |> 
     mutate(year = year(date_posted)) |>
     group_by(school_state, year) |>
@@ -210,7 +210,7 @@ install.packages("ggthemes")
 library(ggthemes)
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 projects |> 
     mutate(year = year(date_posted)) |>
     group_by(school_state, year) |>

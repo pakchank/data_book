@@ -10,6 +10,7 @@ book:
   chapters:
     - index.qmd
     - journalism.qmd
+    - appendix-journalism.qmd
     #- ds.qmd
     #- intro.qmd
     - install.qmd
