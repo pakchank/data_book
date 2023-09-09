@@ -11,8 +11,7 @@ book:
     - index.qmd
     - journalism.qmd
     - appendix-journalism.qmd
-    #- ds.qmd
-    #- intro.qmd
+    - ds.qmd
     - install.qmd
     - quarto.qmd
     - basic.qmd
@@ -40,6 +39,15 @@ format:
           \usepackage{layouts}
           \usepackage{setspace}
           \onehalfspacing
+          \usepackage{fvextra}
+          \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    include-before-body:
+      - text: 
+          \RecustomVerbatimEnvironment{verbatim}{Verbatim}{showspaces = false, showtabs = false, breaksymbolleft={}, breaklines}
+
+knitr:
+  opts_chunk:
+    fig.showtext: TRUE
 
 editor: visual
 

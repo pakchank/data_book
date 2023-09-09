@@ -14,7 +14,7 @@ library(tidyverse)
 projects <- read_csv("data/projects.csv")
 ```
 
-## summarise
+## summarise()
 
 `tidyverse` 문법에서 데이터를 요약할 때에는 그게 어떤 방식의 요약이든간에, 요약을 한다고 선언해 주어야 합니다. 그 선언은 간단하게 `summarise()`라는 함수를 사용하면 됩니다. 그리고 그 함수 안에 '어느 변수를' '어떤 방식으로' 요약할 것인지만 써주면 됩니다.
 
@@ -149,4 +149,4 @@ projects |>
     summarise(avg_size = mean(total_price_excluding_optional_support))
 ```
 
-이렇게 다양한 방식으로 요약한 결과를 그래프로 표현하면, 그것이 바로 시각화 입니다. 드디어 시각화를 배울 준비가 되었습니다.
+이렇게 다양한 방식으로 요약한 결과를 그래프로 표현하면, 그것이 바로 시각화 입니다. 드디어 여러분은 데이터 시각화를 이용할 준비가 되었습니다.

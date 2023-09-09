@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>공부하는 언론인을 위한 R기반 데이터 저널리즘 - 3&nbsp; R과 Rstudio 처음 이용하기</title>
+<title>공부하는 언론인을 위한 R기반 데이터 저널리즘 - 4&nbsp; R과 Rstudio 처음 이용하기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./quarto.html" rel="next">
-<link href="./appendix-journalism.html" rel="prev">
+<link href="./ds.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="검색" onclick="window.quartoOpenSearch();">
@@ -152,80 +152,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ds.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">보도를 위한 데이터과학 기초</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./install.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">R 프로그래밍 기초</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tidy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tidyverse의 이해</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./manipulate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">빅데이터를 분석 가능하게</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summarise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">데이터 요약하기 (= 분석하기)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">데이터 요약하기 (= 분석하기)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visualize.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">데이터 시각화</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">데이터 시각화</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./retrieval.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">데이터 수집하기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">데이터 수집하기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./story.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">데이터 스토리텔링</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">데이터 스토리텔링</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./story2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">심화: 웹프로그래밍을 응용한 데이터 스토리텔링</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">심화: 웹프로그래밍을 응용한 데이터 스토리텔링</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./spatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">심화: 공간정보를 이용한 분석</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">심화: 공간정보를 이용한 분석</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">부록: R과 Rstudio 설치하기</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">부록: R과 Rstudio 설치하기</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-code.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">부록: 본문에 사용된 분석 코드</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">부록: 본문에 사용된 분석 코드</span></span></a>
   </div>
 </li>
     </ul>
@@ -238,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#r과-rstudio-처음-보기" id="toc-r과-rstudio-처음-보기" class="nav-link active" data-scroll-target="#r과-rstudio-처음-보기"><span class="header-section-number">3.1</span> R과 Rstudio 처음 보기</a></li>
+  <li><a href="#r과-rstudio-처음-보기" id="toc-r과-rstudio-처음-보기" class="nav-link active" data-scroll-target="#r과-rstudio-처음-보기"><span class="header-section-number">4.1</span> R과 Rstudio 처음 보기</a></li>
   </ul>
 </nav>
     </div>
@@ -247,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R과 Rstudio 처음 이용하기</span></h1>
 </div>
 
 
@@ -271,8 +277,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>더 정확하게는 위의 페이지에서 FiveThirtyEight은 자신들이 사용한 데이터와 코드를 공개하는데 그치지 않고, 이를 R을 이용하는 다른 사람들이 손쉽게 이용하도록 일종의 ’미니 프로그램’의 형태로 제공하고 있습니다(나중에 보겠지만 R에서는 이를 ’패키지’라고 합니다). 이는 더 이상 FiveThirtyEight만의 특이한 행동은 아닙니다. BBC, 이코노미스트, 뉴욕타임즈 등 대부분의 세계적인 언론사들은 유사한 공유 공간을 활용하고 있습니다. 만약 여러분이 하고자 하는 보도가 이렇게 세계 유수 언론사들의 이미 한 보도와 유사점을 가지고 있다면, 모든 것을 처음부터 프로그래밍할 필요 없이 이렇게 투명하게 공유된 정보를 응용하는 것이 효율적이기도 하거니와, 데이터 저널리즘 공동체가 공유하는 일종의 문화이기도 합니다.</p>
-<section id="r과-rstudio-처음-보기" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="r과-rstudio-처음-보기"><span class="header-section-number">3.1</span> R과 Rstudio 처음 보기</h2>
+<section id="r과-rstudio-처음-보기" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="r과-rstudio-처음-보기"><span class="header-section-number">4.1</span> R과 Rstudio 처음 보기</h2>
 <p>이제 R과 Rstudio를 살펴보도록 하지요. 여기서는 여러분이 R과 Rstudio를 이미 설치했다고 가정할 것입니다. 만약 여러분이 R과 Rstudio을 전혀 접해본 적이 없어 설치부터 시작해야 한다면, 부록으로 실어둔 <span class="citation" data-cites="appendix-install">[Chapter -@appendix-install]</span>을 참조해 주시기 바랍니다.</p>
 <p>먼저, R은 윈도우 시작 버튼을 눌러 실행할 수 있습니다. 시작 화면에서 전체 애플리케이션을 열면, 여러분의 컴퓨터에 설치된R은 보통 다음과 같이 나타납니다.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -288,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption class="figure-caption">R 화면</figcaption>
 </figure>
 </div>
-<p>화면에 가장 크게 보이는 하얀 창이 바로 R의 핵심인 콘솔(Console) 입니다. 여기에 이러저러한 명령을 하고 엔터를 치면 R은 해당 명령을 수행한 결과를 표시해 줍니다. R을 사용하는 가장 단순한 방법은 계산기 처럼 활용하는 것입니다. 예컨대 2+1이라는 연산을 한다고 해 볼까요? 그 때는 가장 단순하게 다음과 2+1이라고 콘솔에 쓰시고 엔터키를 치시면 됩니다. 그러면 다음과 같은 결과를 볼 것입니다.</p>
+<p>화면에 가장 크게 보이는 하얀 창이 바로 R의 핵심인 콘솔(Console) 입니다. 여기에 이러저러한 명령을 하고 엔터를 치면 R은 해당 명령을 수행한 결과를 표시해 줍니다. R을 사용하는 가장 단순한 방법은 계산기 처럼 활용하는 것입니다. 예컨대 2+1이라는 연산을 한다고 해 볼까요? 그 때는 가장 단순하게 다음과 2+1이라고 콘솔에 쓰시고 엔터키를 치면 됩니다. 그러면 다음과 같은 결과를 볼 것입니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">1</span></span></code><button title="클립보드 복사" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -558,13 +564,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./appendix-journalism.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">부록: 데이터 저널리즘 사례와 코드 링크</span></span>
+      <a href="./ds.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">보도를 위한 데이터과학 기초</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./quarto.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">프로젝트와 노트북: 기사작성과 코딩을 동시에!</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

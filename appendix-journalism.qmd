@@ -2,38 +2,32 @@
 
 이 부록에는 R을 이용한 데이터 저널리즘의 유명한 사례들 중 몇 가지를 옮겨두었습니다. 유사한 프로젝트에 관심이 있는 독자들은 코드가 공개되어 있는 해당 링크를 따라가 참조해 보기 바랍니다.
 
-데이터 저널리즘 프로젝트에 특히 R을 자주 사용하는 언론사로는 다음 언론사들이 있습니다.
-
--   FiveThirtyEight
--   The Economist
--   BBC
-
-# The Economist: 코로나 사망자 트래커(인터렉티브)
+## The Economist: 코로나 사망자 트래커(인터렉티브)
 
 ![](img/covid_tracker.png)
 
-기사: https://www.economist.com/graphic-detail/coronavirus-excess-deaths-tracker 
+기사: https://www.economist.com/graphic-detail/coronavirus-excess-deaths-tracker
 
 코드: https://github.com/TheEconomist/covid-19-excess-deaths-tracker
 
-# BBC: R을 이용한 시각화 가이드
+## BBC: R을 이용한 시각화 가이드
 
 ![](img/bbc.png)
 
 튜토리얼: https://bbc.github.io/rcookbook/
 
-# FiveThirtyEight: 쿠엔틴 타란티노 영화에 나온 욕설
+## FiveThirtyEight: 쿠엔틴 타란티노 영화에 나온 욕설
 
 ![](img/tarantino.png)
 
-기사: https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/ 
+기사: https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/
 
 튜토리얼: https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/tarantino_swears.html
 
-# MBC: 여론M 여론조사를 조사하다.
+## MBC: 여론M 여론조사를 조사하다.
 
 ![](img/poll1.png)
 
-기사: http://poll-mbc.co.kr/ 
+기사: http://poll-mbc.co.kr/
 
 코드: https://github.com/jongheepark/poll-MBC
