@@ -8,4 +8,32 @@
 ## 해외 데이터 스토리텔링 참조 자료 목록
 다음의 예들은 교재에서 학습할 기술을 이용해 보도한 사례들입니다. 언론사에 공개한 소스코드를 참조하여 교재를 통해 학습한 내용을 심화하고 스스로의 보도에 응용해 보시기 바랍니다.
 
-TBD
+### The Economist: 코로나 사망자 트래커(인터렉티브)
+
+![](img/covid_tracker.png)
+
+기사: https://www.economist.com/graphic-detail/coronavirus-excess-deaths-tracker
+
+코드: https://github.com/TheEconomist/covid-19-excess-deaths-tracker
+
+### BBC: R을 이용한 시각화 가이드
+
+![](img/bbc.png)
+
+튜토리얼: https://bbc.github.io/rcookbook/
+
+### FiveThirtyEight: 쿠엔틴 타란티노 영화에 나온 욕설
+
+![](img/tarantino.png)
+
+기사: https://fivethirtyeight.com/features/complete-catalog-curses-deaths-quentin-tarantino-films/
+
+튜토리얼: https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/tarantino_swears.html
+
+### MBC: 여론M 여론조사를 조사하다.
+
+![](img/poll1.png)
+
+기사: http://poll-mbc.co.kr/
+
+코드: https://github.com/jongheepark/poll-MBC
